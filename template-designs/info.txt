@@ -1,0 +1,1 @@
+{'firstname': 'Abebe', 'lastname': 'Molla', 'depcity': 'Addisabeba', 'descity': 'Harer', 'phone': '0987654321', 'date': '2023-10-19', 'price': '650', 'no_seat': '2', 'side_no': '7070', 'plate_no': '67566'}
