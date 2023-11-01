@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>base</title>
+<title>select route</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="../static/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../static/styles/responsive.css">
 </head>
-<body style="background-color: #b0c4de">
+<body style="background-color: lightblue;">
 <div class="super_container">
 		<!-- Header -->
 <header class="header">
@@ -34,11 +34,6 @@
 								<li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-						<div class="user_box ml-auto">
-							<div class="user_box_login user_box_link"><a href="login">login</a></div>
-							<div class="user_box_register user_box_link"><a href="registor">register</a></div>
-							<!-- Search Contents -->			
-						</div>
 					</div>
 				</div>
 			</div>		
@@ -49,14 +44,15 @@
 				<div class="row">
 					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">TICKET</a></div>
+							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">ticket</a></div>
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="home">home</a></li>
-                                                                <li class="main_nav_item"><a href="book">book</a></li>
-                                                                <li class="main_nav_item"><a href="get_ticket">Show Tickets</a></li>
-                                                                <li class="main_nav_item"><a href="logout">logout</a></li>
+								<li class="main_nav_item"><a href="users">user</a></li>
+								<li class="main_nav_item"><a href="comment">comment</a></li>
+								<li class="main_nav_item"><a href="offerrs">cheeck route</a></li>
+								<li class="main_nav_item"><a href="logout">logout</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -98,68 +94,67 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-			<li class="main_nav_item"><a href="home">home</a></li>
-                        <li class="main_nav_item"><a href="book">book</a></li>
-                        <li class="main_nav_item"><a href="get_ticket">Show Tickets</a></li>
-                        <li class="main_nav_item"><a href="logout">logout</a></li>
+				<li class="menu_item"><a href="home">home</a></li>
+				<li class="menu_item"><a href="routes">route</a></li>
+				<li class="menu_item"><a href="users">show users</a></li>
+				<li class="menu_item"><a href="comments">show comments</a></li>
+				<li class="menu_item"><a href="logout">logout</a></li>
 			</ul>
 		</div>
 	</div>
-	</br></br></br></br></br></br>
-<div>
-      {% with messages = get_flashed_messages(with_categories=true) %} {% if
-      messages %} {% for category, message in messages %} {% if category ==
-      'error' %}
-      <div class="alert alert-danger alter-dismissable fade show" role="alert">
-        {{ username }}
-        {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% else %}
-      <div class="alert alert-success alter-dismissable fade show" role="alert">
-        {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endif %} {% endfor %} {% endif %} {% endwith %}
-    </div>
-    {% block body_content %} {% endblock%}
-    </br></br></br>
-<div class="copyright">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-3 order-lg-1 order-2  ">
-			<div class="copyright_content d-flex flex-row align-items-center">
-				<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#" target="_blank">Ticket Team </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-			</div>
-		</div>
-		<div class="col-lg-9 order-lg-2 order-1">
-			<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-				<div class="footer_nav">
-					<ul class="footer_nav_list">
-						<li class="main_nav_item"><a href="home">home</a></li>
-                                                <li class="main_nav_item"><a href="book">book</a></li>
-                                                <li class="main_nav_item"><a href="get_ticket">Show Tickets</a></li>
-                                                <li class="main_nav_item"><a href="logout">logout</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-</div>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="js/custom.js"></script>
-</body>
-</html>
+
+{% if admins %}
+{% for admin in admins %}
+       <div class="search_panel active">
+	          <style>
+  .center-input {
+    text-align: center;
+  }
+</style>
+<style>
+  .plate-no-label {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the space */
+  }
+</style>					
+<style>
+    #gender-input {
+        width: 263px;
+    }
+</style>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+<form action="/delete" method="POST">
+	</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+  <table>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th></th> <!-- Add an empty table header for the buttons -->
+    </tr>
+    <tr>
+      <td><input type="text" name="fname" value="{{ admin[3] }}" readonly></td>
+      <td><input type="text" name="lname" value="{{ admin[4] }}" readonly></td>
+      <td><input type="text" name="username" value="{{ admin[5] }}" readonly></td>
+      <td><button type="submit" class="button search_button" style="margin-left: 20px;"><b style="color: red;">Delete</b></button></td>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td><input type="text" name="fname" value="{{ user[0] }}" readonly></td>
+      <td><input type="text" name="lname" value="{{ user[1] }}" readonly></td>
+      <td><input type="text" name="username" value="{{ user[2] }}" readonly></td>
+      <td><button type="submit" class="button search_button" style="margin-left: 20px;"><b style="color: red;">Delete</b></button></td>
+    </tr>
+    <tr></tr>
+    {% endfor %}
+    <tr></tr> <!-- Add an additional empty row at the end -->
+  </table>
+</form>
+
+     {% else %}
+<p>No routes found.</p>
+{% endfor %}
+{% endif %}
+</br></br></br>
+</br></br></br></br></br></br></br</br>
 

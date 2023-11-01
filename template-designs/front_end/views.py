@@ -5,7 +5,6 @@ from models.bus import Bus
 from models.admin import Admin
 from flask import Flask, render_template, request, redirect, url_for, session
 
-
 from flask import Flask, request
 from models.route import Route
 from models.city import City
@@ -104,9 +103,11 @@ def users():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM users')
     users = cursor.fetchall()
-    for user in users:
-        conn.close()
-    return render_template('users.html', users=users)
+    conn.close()
+    if users:
+        return render_template('users.html', users=users)
+    else:
+        return render_template('error.html', error="There is No user!!")
 
 @views.route('/comments')
 def comments():
@@ -114,12 +115,11 @@ def comments():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM comments')
     comments  = cursor.fetchall()
-    for coment in comments:
-        conn.close()
-    return render_template('comments.html', comments=comments)
-
-
-
+    conn.close()
+    if comments:
+        return render_template('comments.html', comments=comments)
+    else:
+        return render_template('error.html', error="There is No Comment !!.")
 
 @views.route('/routes')
 def routes():
@@ -127,9 +127,11 @@ def routes():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM routes')
     routes  = cursor.fetchall()
-    for rout in routes:
-        conn.close()
-    return render_template('routes.html', routes=routes)
+    conn.close()
+    if routes:
+        return render_template('routes.html', routes=routes)
+    else:
+        return render_template('error.html', error="There is No routes")
 
 @views.route('/selectbus')
 def selectbus():
@@ -146,9 +148,11 @@ def buses():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM buses')
     buses  = cursor.fetchall()
-    for bus in buses:
-        conn.close()
-    return render_template('buses.html', buses=buses) 
+    conn.close()
+    if buses:
+        return render_template('buses.html', buses=buses)
+    else:
+        return render_template('error.html',error="There is No Buses!")
 
 
 @views.route('/home')
@@ -174,9 +178,6 @@ def offers():
 def ticket():
     if request.method == 'POST':
         users = storage.all(Ticket).values()
-        """
-        user_ids = [user.user_id for user in users]
-        """
         data = request.form
         print(data)
         firstname = data.get('firstname')
@@ -315,12 +316,9 @@ def route():
         departure = [route.depcity for route in routes]
         desparture = [route.descity for route in routes]
         dates = [route.date for route in routes]
-        """
-        bus_ids = [route.bus_id for route in routes]
-        """
-
 
         print(data)
+
         descity = data.get('descity')
         depcity = data.get('depcity')
         kilometer = data.get('kilometer')
@@ -394,16 +392,15 @@ def admin():
         gender = data.get('gender')
         username = data.get('username')
         if username in usernames:
-            flash("Username already exists", category="error")
+            return render_template('admin.html',error="username already exist")
         elif email in emails:
-            flash("Email address already exists", category='error')
+            return render_template('admin.html',error="this email Already exist")
         elif len(password) < 6 or len(password) > 15:
-            flash("Password must be 6 - 15 characters length",
-                  category='error')
+            return render_template('admin.html', error="pasword must be 6 - 15 Characters length")
         elif len(phone) != 10:
-            flash("Please insert a valid phone number", category='error')
+            return render_template("admin.html", error="phone number must be equal to 10 digit")
         elif phone in phones:
-            flash("Phone number already exists", category='error')
+            return render_template("admin.html", error="phone number already exist")
         else:
             info = {"fname": fname, "lname": lname,
                     "username": username, "password": password, "phone": phone, "gender": gender,
@@ -412,7 +409,7 @@ def admin():
             new_account = Admin(**info)
             new_account.save()
             login_user(new_account, remember=True)
-            return redirect(url_for('views.home'))
+            return render_template('admin.html', success="Admin successfully Registored!")
     return render_template("admin.html", user=current_user)
 @views.route('/registor', methods=['GET', 'POST'], strict_slashes=False)
 @views.route('/')
@@ -492,6 +489,8 @@ def get_route():
 
 @views.route('/book', methods=['GET', 'POST'])
 def book():
+    raw_cities = storage.all(City)
+    des = [city.to_dict() for city in raw_cities.values()]
     if request.method == 'POST':
         date = request.form['date']
         depcity = request.form['depcity']
@@ -505,7 +504,6 @@ def book():
         
         raw_cities = storage.all(City)
         des = [city.to_dict() for city in raw_cities.values()]
-
         if routes:
             for route in routes:
                 if isinstance(route, dict):  
@@ -515,8 +513,8 @@ def book():
                     date = route[7]
             return render_template('roote.html', routes=routes, success="Route info Goto Ticket page!! ")
         else:
-            return render_template('cheeckroutee.html', error='There is no Travel in this city and date!')
-    return render_template('cheeckroutee.html')
+            return render_template('cheeckroutee.html', des=des,error='There is no Travel in this city and date!')
+    return render_template('cheeckroutee.html', des=des)
 @views.route('/Select', methods=['GET', 'POST'])
 def Select():
     if request.method == 'POST':
@@ -607,8 +605,274 @@ def details():
                            route_name=route_name,
                            number_of_schedules=number_of_schedules)
 
+@views.route('/admindelete')
+def admindelete():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM admins')
+    admins = cursor.fetchall()
+    conn.close()
+    return render_template('admindelet.html', admins=admins)
+"""
+@views.route('/delete', methods=['GET', 'POST'])
+def delete():
+    if request.method == 'POST':
+        fname = request.form['fname']
+        lname = request.form['lname']
+        username = request.form['username']
 
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM admins WHERE fname=? AND lname=? AND username=?', (fname, lname, username))
+        rows_deleted = cursor.rowcount
 
+        conn.commit()
+        conn.close()
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM admins')
+        admins = cursor.fetchall()
+        conn.close()
+        if rows_deleted > 0:
+            return render_template('admindelet.html', admins=admins,success="Admin Deleted Successfully")
+        else:
+            return render_template('admindelet.html',error="Error occured!")
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM admins')
+    admins = cursor.fetchall()
+    conn.close()
+    if admins:
+        return render_template('admindelet.html', admins=admins,success="Admin Deleted Successfully")
+    else:
+        return render_template('error.html',error="There is NO Admins For Deleted")
+@views.route('/routedelete', methods=['GET', 'POST'])
+"""
+
+@views.route('/delete', methods=['GET', 'POST'])
+def delete():
+    if request.method == 'POST':
+        fname = request.form['fname']
+        lname = request.form['lname']
+        username = request.form['username']
+
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT COUNT(*) FROM admins')
+        row_count = cursor.fetchone()[0]
+        
+        if row_count <= 1:
+            conn.close()
+            conn = sqlite3.connect('database.db')
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM admins')
+            admins = cursor.fetchall()
+            conn.close()
+            return render_template('admindelet.html',admins=admins, error="Cannot delete admin. At least one account must exist.")
+
+        cursor.execute('DELETE FROM admins WHERE fname=? AND lname=? AND username=?', (fname, lname, username))
+        rows_deleted = cursor.rowcount
+        conn.commit()
+        conn.close()
+
+        if rows_deleted > 0:
+            conn = sqlite3.connect('database.db')
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM admins')
+            admins = cursor.fetchall()
+            conn.close()
+            return render_template('admindelet.html', admins=admins, success="Admin deleted successfully.")
+        else:
+            return render_template('admindelet.html', error="No admin found with the provided information.")
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM admins')
+    admins = cursor.fetchall()
+    conn.close()
+
+    if admins:
+        return render_template('admindelet.html', admins=admins)
+    else:
+        return render_template('error.html', error="There are no admins to delete.")
+@views.route('/routedelete', methods=['GET', 'POST'])
+def routedelete():
+    if request.method == 'POST':
+        depcity = request.form['depcity']
+        descity = request.form['descity']
+        date = request.form['date']
+        plate_no = request.form['plate_no']
+        side_no = request.form['side_no']
+
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM routes WHERE depcity=? AND descity=? AND date=? AND plate_no=? AND side_no=?', (depcity, descity, date, plate_no, side_no))
+        rows_deleted = cursor.rowcount
+        
+        conn.commit()
+        conn.close()
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM routes')
+        routes = cursor.fetchall()
+        conn.close()
+        if rows_deleted > 0:
+            return render_template('routedelete.html', routes=routes,success="Route Deleted Successfully!")
+        else:
+            return render_template('routedelete.html', routes=routes)
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM routes')
+    routes = cursor.fetchall()
+    conn.close()
+    if routes:
+        return render_template('routedelete.html', routes=routes, success="Route Deleted Successfully!")
+    else:
+        return render_template('error.html',error="There is No routes for Delete")
+@views.route('/busdelete')
+def busdelete():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM buses')
+    buses = cursor.fetchall()
+    conn.close()
+    if buses:
+        return render_template('busdelet.html', buses=buses)
+    else:
+        return render_template('error.html', error="NO buses for delete ")
+@views.route('/deletebus', methods=['GET', 'POST'])
+def deletebus():
+    if request.method == 'POST':
+        plate_no = request.form['plate_no']
+        sideno = request.form['sideno']
+        no_seats = request.form['no_seats']
+
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM buses WHERE plate_no=? AND sideno=? AND no_seats=?', (plate_no, sideno, no_seats))
+        rows_deleted = cursor.rowcount
+
+        conn.commit()
+        conn.close()
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM buses')
+        buses = cursor.fetchall()
+        conn.close()
+    
+        if rows_deleted > 0:
+            return render_template('busdelet.html', buses=buses, success="Bus Deleted Successfully!")
+        else:
+            return render_template('error.html',error="Error occured!")
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM buses')
+    buses = cursor.fetchall()
+    conn.close()
+    if cities:
+         return render_template('busdelet.html', buses=buses)
+    else:
+        return render_template('error.html', error="There is No city for Delete")
+
+@views.route('/citydelete', methods=['GET', 'POST'])
+def citydelete():
+    if request.method == 'POST':
+        depcity = request.form['depcity']
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM cities WHERE depcity=?', (depcity,))
+        rows_deleted = cursor.rowcount
+
+        conn.commit()
+        conn.close()
+
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM cities')
+        cities = cursor.fetchall()
+        conn.close()
+        if rows_deleted > 0:
+            return render_template('citydelet.html', cities=cities,success="City Deleted Successfully")
+        else:
+            return render_template('citydelet.html', cities=cities,error="There is No city for Deleted")
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM cities')
+    cities = cursor.fetchall()
+    conn.close()
+    if cities:
+         return render_template('citydelet.html', cities=cities)
+    else:
+        return render_template('error.html', error="There is No city for Delete")
+@views.route('/commentdelete', methods=['GET', 'POST'])
+def commentdelete():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM comments WHERE name=? AND email=? AND phone=?', (name, email, phone,))
+        rows_deleted = cursor.rowcount
+
+        conn.commit()
+        conn.close()
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM comments')
+        comments = cursor.fetchall()
+        conn.close()
+        if rows_deleted > 0:
+            return render_template('commentdelet.html', comments=comments,success="comment deleted successfully!")
+        else:
+            return render_template('commentdelet.html',error="There is no Comment for Delete!")
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM comments')
+    comments = cursor.fetchall()
+    conn.close()
+    if comments:
+        return render_template('commentdelet.html', comments=comments)
+    else:
+        return render_template('error.html', error="NO Comments for delete!")
+
+"""
+@views.route('/routedelete', methods=['GET', 'POST'])
+def routedelete():
+    if request.method == 'POST':
+        depcity = request.form['depcity']
+        descity = request.form['descity']
+        date = request.form['date']
+        plate_no = request.form['plate_no']
+        sideno = request.form['sideno']
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM routes WHERE depcity=? AND descity=? AND date=? AND ', (name, email, phone,))
+        rows_deleted = cursor.rowcount
+
+        conn.commit()
+        conn.close()
+
+        if rows_deleted > 0:
+            return redirect('/')
+        else:
+            return 'Failed to delete. User not found.'
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM comments')
+    comments = cursor.fetchall()
+    conn.close()
+
+    if comments:
+        return render_template('commentdelet.html', comments=comments)
+    else:
+        return render_template('ad.html', error="NO cities for delete")
+"""
 
 @views.route('/profile')
 def profile():

@@ -117,7 +117,6 @@
 				</div>
 			</div>		
 		</div>
-		<!-- Main Navigation -->
 		<nav class="main_nav">
 			<div class="container">
 				<div class="row">
@@ -130,9 +129,7 @@
 								<li class="main_nav_item"><a href="home">home</a></li>
 								<li class="main_nav_item"><a href="about">about us</a></li>
 								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
 								<li class="main_nav_item"><a href="comment">comment</a></li>
-								<li class="main_nav_item"><a href="contact.html">contact</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -181,9 +178,7 @@
 				<li class="menu_item"><a href="home">home</a></li>
 				<li class="menu_item"><a href="about">about us</a></li>
 				<li class="menu_item"><a href="offers">cheeck route</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
 				<li class="menu_item"><a href="comment">comment</a></li>
-				<li class="menu_item"><a href="contact.html">contact</a></li>
 			</ul>
 		</div>
 	</div>
@@ -194,8 +189,7 @@
         <h3 style="color: green; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
     </div>
 {% endif %}
-	<!-- Home -->
-<div class="search1">
+<div class="search30">
 								<div class="container fill_height">
 									<div class="row fill_height">
 										<div class="col fill_height">
@@ -213,18 +207,17 @@
         }
     }
 </script>
-</br></br></br></br>
-</br></br>
+</br>
 <form action="#" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-    <div class="search_item">
+	<div class="search_item">
         
-	<span style="display: inline-block; white-space: nowrap; margin-left: 300px;"><b><h2 style="color: black; margin: 0;">Register Form </h2></b></span></br></br></br>
+		<span style="display: inline-block; white-space: nowrap; margin-left: 300px;"><b><h2 style="color: black; margin-left:130px;color:blue;"><b>Register User</b></h2></b></span></br></br></br>
   </b>
         <div style="display: flex; align-items: center;">
         <span style="margin-right: 10px;margin-left:320px;">First</span>
             <span>name:</span>
             <div>
-<input type="text" size="30" id="firstname" name="fname" maxlength="15" size ="20px" class="check_in search_input wide-input" style="margin-left: 15px; width: 300px; text-align: center; text-transform: capitalize;" oninput="validatedepcity(this)" required="descity is required" class="center-input">
+<input type="text" size="30" id="firstname" name="fname" maxlength="15" size ="20px" class="check_in search_input wide-input" style="margin-left: 7px; width: 300px; text-align: center; text-transform: capitalize;" oninput="validatedepcity(this)" required="descity is required" class="center-input">
 <span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;"></span>
 <script>
 function validatedepcity(input) {
@@ -246,7 +239,9 @@ function validatedepcity(input) {
 
   input.value = value.charAt(0).toUpperCase() + value.slice(1);
 }
-// Display error message when the input field is empty on page load
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   var input = document.getElementById("mySelect");
   var errorMessage = document.getElementById("error-message");
@@ -264,14 +259,12 @@ document.addEventListener("DOMContentLoaded", function() {
             <span style="margin-right: 10px;margin-left:320px;">Last</span>
             <span>name:</span>
             <div>
-
 <input type="text" size="30" id="firstname" name="lname" maxlength="15" size ="20px" class="check_in search_input wide-input" style="margin-left: 8px; width: 300px; text-align: center; text-transform: capitalize;" oninput="validatedepcity(this)" required="descity is required" class="center-input">
 <span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;"></span>
 <script>
 function validatedepcity(input) {
   var value = input.value.trim();
   var errorMessage = document.getElementById("error-message");
-
   if (!value.match(/^[a-zA-Z]+$/)) {
     errorMessage.textContent = "Please enter a character for name.";
     errorMessage.style.display = "block";
@@ -284,7 +277,6 @@ function validatedepcity(input) {
     errorMessage.style.display = "none";
     input.setCustomValidity("");
   }
-
   input.value = value.charAt(0).toUpperCase() + value.slice(1);
 }
 document.addEventListener("DOMContentLoaded", function() {
@@ -331,11 +323,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="display: flex; align-items: center;">
     <span style="margin-right: 10px;margin-left:320px;">Phone:</span>
     <div>
-    <input type="text" style="margin-left: 25px; width: 300px;" class="check_out search_input wide-input" size="10" maxlength="10" oninput="validatePhone(this)" pattern="[0-9]+" name="phone" maxlength="10" required>
+    <input type="text" style="margin-left: 32px; width: 300px;" class="check_out search_input wide-input" size="10" maxlength="10" oninput="validatePhone(this)" pattern="[0-9]+" name="phone" maxlength="10" required>
         <div id="phoneError" style="color: red;"></div>
     </div>
 </div>
-
 <script>
 function validatePhone(input) {
     var phoneError = document.getElementById("phoneError");
@@ -358,7 +349,7 @@ function validatePhone(input) {
 <div style="display: flex; align-items: center;">
     <span style="margin-right: 10px;margin-left:320px;">Email:</span>
     <div>
-        <input type="email" name="email" style="margin-left: 30px;width:300px;" class="check_out search_input wide-input" size="25" maxlength="25" oninput="validateEmail(this)" required>
+        <input type="email" name="email" style="margin-left: 43px;width:300px;" class="check_out search_input wide-input" size="40" maxlength="25" oninput="validateEmail(this)" required>
         <div id="emailError" style="color: red;"></div>
     </div>
 </div>
@@ -376,10 +367,7 @@ function validateEmail(input) {
     }
 }
 </script>
-
- <!--<button class="button search_button">Register</button> -->
- <!--<button class="button search_button" style="margin-left: 110px;">Register</button>-->
-  <button class="button search_button" style="margin-left: 420px;">Register</button>
+  <button class="button search_button" style="margin-left: 500px;">Register</button>
     </div>
 </form>
 </div>
@@ -387,11 +375,6 @@ function validateEmail(input) {
 </div>
 </div>		
 </div>
-
-
-
-
-
 	<div class="row intro_items">
 		<div class="col-lg-4 intro_col">
 			<div class="intro_item">
@@ -493,8 +476,7 @@ function validateEmail(input) {
 						<li class="footer_nav_item"><a href="home">home</a></li>
 						<li class="footer_nav_item"><a href="about">about us</a></li>
 						<li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-						<li class="footer_nav_item"><a href="blog.html">news</a></li>
-						<li class="footer_nav_item"><a href="contact.html">contact</a></li>
+						<li class="footer_nav_item"><a href="login">logout</a></li>
 					</ul>
 				</div>
 			</div>

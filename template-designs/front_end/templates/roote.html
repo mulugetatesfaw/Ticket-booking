@@ -48,11 +48,9 @@
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="users">user</a></li>
-								<li class="main_nav_item"><a href="comment">comment</a></li>
-								<li class="main_nav_item"><a href="offerrs">cheeck route</a></li>
-								<li class="main_nav_item"><a href="logout">logout</a></li>
+							     <li class="main_nav_item"><a href="home">home</a></li>
+                                                              <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                              <li class="main_nav_item"><a href="book">book</a></li>                                                                			    <li class="main_nav_item"><a href="logout">logout</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -94,18 +92,13 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="routes">route</a></li>
-				<li class="menu_item"><a href="users">show users</a></li>
-				<li class="menu_item"><a href="comments">show comments</a></li>
-				<li class="menu_item"><a href="logout">logout</a></li>
+			  <li class="main_nav_item"><a href="home">home</a></li>
+                          <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                          <li class="main_nav_item"><a href="book">book</a></li>
+                          <li class="main_nav_item"><a href="logout">logout</a></li>
 			</ul>
 		</div>
 	</div>
-
-{% if routes %}
-{% for route in routes %}
-<!-- <h3 style="color: blue; text-align: right; position: right;"><b style = "color": green;">Travel: </b><b>{{ route[4] }}</b></h3> -->
        <div class="search_panel active">
 	          <style>
   .center-input {
@@ -117,192 +110,52 @@
     margin-bottom: 10px; /* Adjust the value to increase or decrease the space */
   }
 </style>
-
-{{count_str}}
-             
-
-						
+</br></br></br></br>
 <style>
     #gender-input {
         width: 263px;
     }
-</style>
-
-
-<form action="Select" method="post">
-  <div style="display: flex; flex-direction: column; align-items: flex-start;">
-<style>
-  .input-wrapper {
-    margin-left: 20px;
-  }
-</style>
-</br>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-<h3 style="display: flex; justify-content: space-between;">
-    <b style="margin-left: 35px; color: purple; font-weight: bold;">Departure City:</b>
-    <input type="text" name="depcity" value="{{ route[4] }}" class="center-input" style="margin-left: 30px; background-color: blue; color: white; font-weight: bold;" readonly>
-</h3>
-<h3 style="display: flex; justify-content: space-between;">
-<b style="margin-left: 40px; color: purple; font-weight: bold;">Destination City:</b> <input type="text" name="descity" value="{{ route[5] }}" style="margin-left: 10px; background-color: blue; color: white; font-weight: bold;" class="center-input" readonly></h3>
-
-<h3 style="display: flex; justify-content: space-between;">
-  <b class="plate-no-label" style="margin-left: 40px; color: purple; font-weight: bold;">Plate N0:</b>
-  <input type="text" class="center-input"  style="margin-left: 102px; background-color: blue; color: white; font-weight: bold;" name="plate_no" value="{{ route[9] }}" class="center-input" readonly></h3>
-<h3 style="display: flex; justify-content: space-between;"><b style="margin-left: 40px; color: purple; font-weight: bold;">Travel Date:</b> <input type="text" style="margin-left: 67px; background-color: blue; color: white; font-weight: bold;" name="date" value="{{ route[3] }}" class="center-input" readonly></h3>  </div>
-  </br>
-  <div style="text-align: center; margin-left: 400px;">
-    <button class="button search_button">Next</button>
-    </br></br></br></br></br></br></br></br>
-  </div>
-</form>
-
-<!--
-
-						  <form action="Select" method="post">
-
-					         <div style="display: flex; flex-direction: column; align-items: center;">
-							 <h3><b  class="plate-no-label">Plate_No:</b> <input type="text" name = "plate_no" value = "{{ route[10] }}" class="center-input" readonly></h3>						 
-						 <h3><b>Departure City:   <input type="text" name = "depcity" value = "{{ route[4]}}" class="center-input" readonly></b></h3>
-						 
-						 <h3><b>Destination City: <input type="text" name = "descity" value = "{{ route[5]}}" class="center-input" readonly></b></h3>
-						 <h3><b>Date:            <input type="text" name = "date" value = "{{ route[3] }}" class="center-input" readonly></b></h3>
-
-
-
-       </div>           <div style="text-align: center;">
-                        <button class="button search_button">Next</button>                                                                                    </form> 
-
-						  -->
-
-     {% else %}
-<p>No routes found.</p>
-{% endfor %}
-{% endif %}
+</style></br></br></br></br>
+<table style="margin-left: 100px;margin-top: 320px;">
+	</br></br></br></br>
+    <thead>
+    <tr style="background-color: lightgray;">
+        <th style="padding-top: 100px;">
+            <h3><b style="color: red; background-color: green;">No</b></h3>
+        </th>
+        <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Departure</b></h3></th>
+        <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Destination</b></h3></th>
+        <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Plate No</b></h3></th>
+        <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Travel Date</b></h3></th>
+        <th></th>
+    </tr>
+</thead>
+    <tbody style="background-color: lightgray; margin-left: 300px;">
+        {% for route in routes %}
+        <tr>
+            <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
+            <td>
+                <form action="/Select" method="POST">
+                    <input type="text" name="depcity" value="{{ route[4] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="descity" value="{{ route[5] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="plate_no" value="{{ route[9] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="date" value="{{ route[3] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <button type="submit" style="height: 40px; width: 100px; background-color: blue; margin-left: 50px; text-align: center; color: brown; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: pink;">Select</b></button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 </br></br></br>
   </br></br></br></br></br></br></br</br>
-
-
-  <!--
-  <div class="cta_slider_nav cta_slider_prev">
-                                        <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-                                                <defs>
-                                                        <linearGradient id='cta_grad_prev'>
-                                                                <stop offset='0%' stop-color='#fa9e1b'/>
-                                                                <stop offset='100%' stop-color='#8d4fff'/>
-                                                        </linearGradient>
-                                                </defs>
-                                                <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-                                                M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-                                                C22.545,2,26,5.541,26,9.909V23.091z"/>
-                                                <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219
-                                                11.042,18.219 "/>
-                                        </svg>
-                                </div>
-
-
-				<div class="cta_slider_nav cta_slider_next">
-                                        <svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
-                                                <defs>
-                                                        <linearGradient id='cta_grad_next'>
-                                                                <stop offset='0%' stop-color='#fa9e1b'/>
-                                                                <stop offset='100%' stop-color='#8d4fff'/>
-                                                        </linearGradient>
-                                                </defs>
-                                        <path class="nav_path" fill="#F3F6F9" d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-                                        M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-                                        C22.545,2,26,5.541,26,9.909V23.091z"/>
-                                        <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554
-                                        17.046,15.554 "/>
-                                        </svg>
-                                </div>
-                        </div>
-                </div>
-        </div>
-</div>
-</div>
-</div>
-</div>
-<div class="copyright">
-<div class="container">
-        <div class="row">
-                <div class="col-lg-3 order-lg-1 order-2  ">
-                        <div class="copyright_content d-flex flex-row align-items-center">
-                                <div>
-&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://colorlib.com" target="_blank">Alx student </a>
-</div>
-                        </div>
-                </div>
-                <div class="col-lg-9 order-lg-2 order-1">
-                        <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-                                <div class="footer_nav">
-                                        <ul class="footer_nav_list">
-                                        <li class="main_nav_item"><a href="home">home</a></li>
-                                        <li class="main_nav_item"><a href="businsert">insert bus</a></li>
-                                        <li class="main_nav_item"><a href="route">route insert</a></li>
-                                        <li class="main_nav_item"><a href="routes">routes</a></li>
-                                        <li class="footer_nav_item"><a href="users">users</a></li>
-                                        <li class="footer_nav_item"><a href="buses">buses</a></li>
-                                        <li class="footer_nav_item"><a href="admin">admin acount</a></li>
-                                        <li class="footer_nav_item"><a href="city">insert city</a></li>
-                                        <li class="footer_nav_item"><a href="logout">logout</a></li>
-
-                                        </ul>
-                                </div>
-
-				 </div>
-                </div>
-        </div>
-</div>
-</div>
-</div>
-<script src="../static/js/jquery-3.2.1.min.js"></script>
-<script src="../static/styles/bootstrap4/popper.js"></script>
-<script src="../static/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="../static/plugins/easing/easing.js"></script>
-<script src="../static/js/custom.js"></script>
 </body>
 </html>
--->
-  <!--
-  <div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 order-lg-1 order-2  ">
-					<div class="copyright_content d-flex flex-row align-items-center">
-						<div>
-&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#">Guzo Team</a>
-</div>
-					</div>
-				</div>
-				<div class="col-lg-9 order-lg-2 order-1">
-					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-						<div class="footer_nav">
-							<ul class="footer_nav_list">
-								<li class="footer_nav_item"><a href="home">home</a></li>
-								<li class="footer_nav_item"><a href="#">show tickets</a></li>
-								<li class="footer_nav_item"><a href="comments">comments</a></li>
-								<li class="footer_nav_item"><a href="users">users</a></li>
-								<li class="footer_nav_item"><a href="routes">routes</a></li>
-								<li class="footer_nav_item"><a href="logout">logout</a></li>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="../static/js/jquery-3.2.1.min.js"></script>
-<script src="../static/styles/bootstrap4/popper.js"></script>
-<script src="../static/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="../static/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="../static/https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="../static/js/contact_custom.js"></script>
-</body>
-</html>
--->
-

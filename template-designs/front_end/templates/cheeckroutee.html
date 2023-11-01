@@ -47,23 +47,19 @@
 				</div>
 			</div>		
 		</div>
-
-		<!-- Main Navigation -->
-
 		<nav class="main_nav">
 			<div class="container">
 				<div class="row">
 					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">travelix</a></div>
+							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">ticket</a></div>
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="about">about us</a></li>
-								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
-								<li class="main_nav_item"><a href="comment">comment</a></li>
+							    <li class="main_nav_item"><a href="home">home</a></li>
+                                                            <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                            <li class="main_nav_item"><a href="book">book</a></li>
+                                                            <li class="main_nav_item"><a href="logout">logout</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -109,17 +105,13 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="about">about us</a></li>
-				<li class="menu_item"><a href="offers">cheeck rout</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
-				<li class="menu_item"><a href="comment">comment</a></li>
+				   <li class="main_nav_item"><a href="home">home</a></li>
+                                   <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                   <li class="main_nav_item"><a href="book">book</a></li>
+                                   <li class="main_nav_item"><a href="logout">logout</a></li>
 			</ul>
 		</div>
 	</div>
-	<!-- Home -->
-	<!-- Home -->
-	<!-- Offers -->
 	</br>
 	</br>
 	</br>
@@ -127,14 +119,11 @@
 	</br>
 	</br>
 	<div class="offers">
-		<!-- Search -->
 		<div class="search10">
 			<div class="search_inner">
-				<!-- Search Contents -->
 				<div class="container fill_height no-padding">
 					<div class="row fill_height no-margin">
 						<div class="col fill_height no-padding">
-							<!-- Search Tabs -->
 							<div class="container fill_height">
 								<div class="row fill_height">
 									<div class="col fill_height">
@@ -142,31 +131,7 @@
 									</br>
 									</br>
 									</br>
-									</br>	<!-- Search Tabs -->
-
-
-
-<!--
-{% if error %}
-<h1 style="color: red;"><b>{{ error }}<b></h1>
-    {% endif %}
-    </br></br></br>
--->
-<!--
-<style>
-    body {
-        background-color: pink;
-    }
-</style>
-
-{% if error %}
-    <h4 style="color: red;"><b>{{ error }}</b></h4>
-{% endif %}
-<br><br><br>
-<div style="width: 100%; text-align: right;">
-    <span style="font-size: 24px; color: white; background-color: black; padding: 5px;">x</span>
-</div>
--->
+									</br>
 <style>
     body {
         background-color: pink;
@@ -190,50 +155,34 @@
         <h3 style="color: red; margin-left: 70px;"><b>{{ error }} <span class="symbol">x</span></b></h3>
     </div>
 {% endif %}
-
-
-
-
-
-
-
-
-
-
 									<div class="search_panel active">
 									<form action="book" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">										    <div class="search_item">
 									<div><h1>From</h1></div>
-									<input type="text" name = "depcity" class="check_in search_input" placeholder="dep-city">
-<!--
-									<select style="width: 200px; margin-left: -30px;" name="depcity" id="gender-input" class="check_in search_input" required="Select Departure city.">
-        <option value=""style="color: green; font-weight: bold;"><h1>Select Departure</h1></option>
-{% if des %}
+<select style="width: 200px;" name = "depcity" id="gender-input" class="check_in search_input" style="text-align: center;" required="Select Destination city." class="check_in search_input">
+    <option value="" style="color: green; font-weight: bold;">Select Desparture</option>
+    {% if des %}
         {% for depcity in des %}
-        <!--<option value="{{ depcity.depcity}}">{{ depcity.depcity }}</option>-->
-        <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
+         <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
         {% endfor %}
     {% endif %}
 </select>
--->
+
+
+
+
+
+
+
 									</div>
-									<div class="search_item">													<div><h1>TO</h1></div>	
-
-
-										<!--
-									<select style="width: 200px; margin-left: -60px;" name="descity" id="gender-input" class="check_in search_input" required="Select Departure city.">
-        <option value=""style="color: green; font-weight: bold;"><h1>Select Departure</h1></option>
-{% if des %}
+									<div class="search_item">													<div><h1>TO</h1></div>
+					<select style="width: 200px; text-align: center; margin-right:400px;" name="descity" id="gender-input" class="check_in search_input" required="Select Destination city.">
+    <option value="" style="color: green; font-weight: bold;">Select Desparture</option>
+    {% if des %}
         {% for depcity in des %}
- 
-        <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
+            <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
         {% endfor %}
     {% endif %}
 </select>
-
-
--->
-
-										<input type="text" name = "descity" class="check_out search_input" placeholder="des-city">
 
 
 					
@@ -426,19 +375,16 @@
 				<div class="col-lg-3 order-lg-1 order-2  ">
 					<div class="copyright_content d-flex flex-row align-items-center">
 						<div>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved designed by guzo team <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">guzo team</a></div>
-					</div>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved designed by guzo team <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Ticket team</a></div>					</div>
 				</div>
 				<div class="col-lg-9 order-lg-2 order-1">
 					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
 						<div class="footer_nav">
 							<ul class="footer_nav_list">
-								<li class="footer_nav_item"><a href="home">home</a></li>
-								<li class="footer_nav_item"><a href="about">about us</a></li>
-								<li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="footer_nav_item"><a href="blog.html">news</a></li>
-								<li class="footer_nav_item"><a href="comment">Comment</a></li>
-								<li class="footer_nav_item"><a href="contact.html">contact</a></li>
+							   	<li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                                <li class="main_nav_item"><a href="book">book</a></li>
+                                                        	<li class="main_nav_item"><a href="logout">logout</a></li>
 							</ul>
 						</div>
 					</div>

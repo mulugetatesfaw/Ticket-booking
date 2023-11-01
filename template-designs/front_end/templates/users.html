@@ -45,16 +45,32 @@
 				<div class="row">
 					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">guzo</a></div>
+							<div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">Ticket</a></div>
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="users">user</a></li>
-								<li class="main_nav_item"><a href="comments">comments</a></li>
-								<li class="main_nav_item"><a href="routes">routes</a></li>
-								<li class="menu_item"><a href="buses">buses</a></li>
-								<li class="main_nav_item"><a href="logout">logout</a></li>
+						            <li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Insert Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Route insert</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Insert City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -96,12 +112,28 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="routes">routes</a></li>
-				<li class="menu_item"><a href="users">users</a></li>
-				<li class="menu_item"><a href="buses">buses</a></li>
-				<li class="menu_item"><a href="comments">comments</a></li>
-				<li class="menu_item"><a href="logout">logout</a></li>
+			   <li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Insert Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Route insert</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Insert City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
 			</ul>
 		</div>
 	</div>
@@ -153,13 +185,28 @@
 					<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
 						<div class="footer_nav">
 							<ul class="footer_nav_list">
-								<li class="footer_nav_item"><a href="home">home</a></li>
-								<li class="footer_nav_item"><a href="routes">routes</a></li>
-								<li class="footer_nav_item"><a href="comments">comments</a></li>
-								<li class="footer_nav_item"><a href="#">###</a></li>
-								<li class="footer_nav_item"><a href="users">users</a></li>
-								<li class="menu_item"><a href="buses">buses</a></li>
-								<li class="footer_nav_item"><a href="logout">logout</a></li>
+			   <li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Insert Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Route insert</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Insert City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
 
 							</ul>
 						</div>

@@ -42,7 +42,8 @@
 				</div>
 			</div>		
 		</div>
-		<!-- Main Navigation -->
+	
+
 		<nav class="main_nav">
 			<div class="container">
 				<div class="row">
@@ -52,12 +53,10 @@
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="about">about us</a></li>
-								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
-								<li class="main_nav_item"><a href="comment">comment</a></li>
-								<li class="main_nav_item"><a href="contact.html">contact</a></li>
+							    <li class="main_nav_item"><a href="home">home</a></li>
+                                                            <li class="main_nav_item"><a href="about">about us</a></li>
+                                                            <li class="main_nav_item"><a href="offers">cheeck route</a></li>
+                                                            <li class="main_nav_item"><a href="comment">comment</a></li>
 							</ul>
 						</div>
 
@@ -99,17 +98,14 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt="">Ticket</a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="about">about us</a></li>
-				<li class="menu_item"><a href="offers">cheeck route</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
-				<li class="menu_item"><a href="comment">comment</a></li>
-				<li class="menu_item"><a href="contact.html">contact</a></li>
-
+		           <li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="about">about us</a></li>
+                           <li class="main_nav_item"><a href="offers">cheeck route</a></li>
+                           <li class="main_nav_item"><a href="comment">comment</a></li>
 			</ul>
 		</div>
 	</div>
-								<div class="search">					
+	<div class="search17">					
     <div class="container fill_height">
         <div class="row fill_height">
             <div class="col fill_height">
@@ -118,9 +114,7 @@
         <p>{{ error }}</p>
     {% endif %}
 
-
-
-
+<style>
     form#search_form_1 {
   display: flex;
   flex-direction: column;
@@ -128,78 +122,57 @@
   justify-content: center;
   text-align: center;
 }
-                    
-<form method="post" action="login" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-
-          
-<div class="search_item">
-	 </br></br></br></br></br></br></br></br>
- </br></br></br>
+</style>
+<form method="post" action="login" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start" style="display: flex; flex-direction: column; align-items: center; justify-content: margin-left: 30px; margin-left: 0;">
+       <div class="search_item">
 		              {% if error %}
     <div class="success">
-    <h3 style="color: red; margin-left: 150px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">X</span></h3>
+	    </br></br></br></br></br></br></br>
+	    <h3 style="color: red; margin-left: 150px; display: inline-block; white-space: nowrap;">
+  <b>{{ error }}</b>
+  <span style="margin-left: 30px;" class="symbol">X</span>
+</h3>
     </div>
     {% endif %}
-
-    <div style="display: flex; align-items: center;">
-  <span style="margin-right: 7px; display: inline-block;">Username:</span>
-  <input type="text" size="50" name="username" class="check_out search_input" placeholder="Username" style="display: inline-block; width:200px;">
-</div>
-<div style="display: flex;margin-right:200px; align-items: center;">
-    <span style="margin-right: 10px; display: inline-block;">Password:</span>
-    <input type="password" name="password" class="check_out search_input" style="width:200px;" pattern="[A-Za-z0-9]{4,8}" size="50" maxlength="30" required="required">
-</div>
-    </br>
-    <label for="role">Role:</label>
-    <select id="role" name="role" required>
-      <option value="admin">Admin</option>
-      <option value="user">User</option>
-    </select><br>
-
-    <button class="button search_button">Login</button></br></br></br>
-    <!--
-    <div>Don't have an account?&nbsp;&nbsp;<a href="registor"><b>Sign up</b></a></div>
-    -->
-   <span style="white-space: nowrap;">Don't have an account?&nbsp;&nbsp;<a href="registor" style="display: inline-block;"><b>Sign up</b></a></span>
-  </div>
-</form>
-
-
-
-<script>
-function togglePasswordVisibility(checkbox) {
-    var passwordInput = checkbox.previousElementSibling;
-    if (checkbox.checked) {
-        passwordInput.type = "text";
-    } else {
-        passwordInput.type = "password";
-    }
-}
-</script>
-<!--
-
-    <form method="post" action="login" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-                        <div class="search_item">
-                            <br><br><br><br><br><br>
-                            <div>Username:</div>
-                            <input type="text" size="50" name="username" class="check_out search_input" placeholder="Username">
-                            <div>Password:</div>
-                            <input type="password" name="password" class="check_out search_input" pattern="[A-Za-z0-9]{4,8}" size="50" maxlength="30" required="Fill Password"><br>
-
-
-
-	<label for="role">Role:</label>
-        <select id="role" name="role" required>
+<div style="display: flex; justify-content: flex-start; margin-left: 150px; width: 180px;">
+  <div style="margin-right: 70px; margin-left: 20px; margin-top: 20px; background-color: lightgray; padding: 10px; color: black;">
+	  </br></br></br>
+    <div style="display: flex; align-items: center; margin-right: 150px;">
+    <span style="margin-right: 7px; display: inline-block; margin-left: 100px;">Username:</span>
+    <input type="text" size="50" name="username" class="check_out search_input" placeholder="Username" style="display: inline-block; width: 150px; border: 1px solid gray; background-color: white; color: black;">
+    </div>
+    <div style="display: flex; align-items: center; margin-right: 150px;">
+      <span style="margin-left: 100px; margin-right: 10px;">Password:</span>
+      <input type="password" id="password" name="password" class="check_out search_input" style="width: 150px; border: 1px solid gray; background-color: white; color: black;" pattern="[A-Za-z0-9]{4,8}" size="50" maxlength="30" required="required">
+      <button type="button" onclick="togglePasswordVisibility()" style="margin-left: 5px;"><b style="clolor:blue;">Show</b></button>
+    </div>
+    <div style="margin-right: 150px;">
+	    <label for="role" style="padding-left: 10px;"><b>Role:</b></label>
+      <select id="role" name="role" required style="background-color: white; color: blue;">
         <option value="admin">Admin</option>
-         <option value="user">User</option>
-        </select><br>
-	 <button class="button search_button">Login</button>
-                        </br></br>
-			    </br>
-                        <div>Don't have an account?&nbsp;&nbsp;<a href="registor"><b>Sign up</b></a></div>
-			</div>
-                    </form>
--->
+        <option value="user">User</option>
+      </select>
+    </div>
+    <div>
+	    <button class="button search_button" style="margin-right: 40px; background-color: white; color: blue;"><b>Login</b></button>
+    </div>
+    <br>
+    <div>
+      <span style="margin-left: 50px;">Don't have an account?&nbsp;&nbsp;<a href="registor" style="display: inline-block; color: blue;"><b>Sign up</b></a></span>
+    </div>
+  </div>
+</div>
+<script>
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("password");
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+    } else {
+      passwordInput.type = "password";
+    }
+  }
+</script>
+</form>
                 </div>
             </div>
         </div>
@@ -208,7 +181,6 @@ function togglePasswordVisibility(checkbox) {
 </div>
 	</div>
 	<div class="row intro_items">
-		<!-- Intro Item -->
 		<div class="col-lg-4 intro_col">
 			<div class="intro_item">
 				<div class="intro_item_overlay"></div>
@@ -231,11 +203,9 @@ function togglePasswordVisibility(checkbox) {
 				</div>
 			</div>
 		</div>
-		<!-- Intro Item -->
 		<div class="col-lg-4 intro_col">
 			<div class="intro_item">
 				<div class="intro_item_overlay"></div>
-				<!-- Image by https://unsplash.com/@willianjusten -->
 				<div class="intro_item_background" style="background-image:url(../static/images/intro_3.jpg)"></div>
 				<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 					<div class="intro_center text-center">
@@ -247,8 +217,6 @@ function togglePasswordVisibility(checkbox) {
 	</div>
 </div>
 </div>
-<!-- Footer -->
-<!-- Copyright -->
 <div class="copyright">
 <div class="container">
 	<div class="row">
@@ -264,7 +232,6 @@ function togglePasswordVisibility(checkbox) {
 						<li class="footer_nav_item"><a href="home">home</a></li>
 						<li class="footer_nav_item"><a href="about">about us</a></li>
 						<li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-						<li class="footer_nav_item"><a href="blog.html">news</a></li>
 						<li class="footer_nav_item"><a href="comment">comment</a></li>
 					</ul>
 				</div>
