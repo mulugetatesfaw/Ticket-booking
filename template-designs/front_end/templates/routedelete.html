@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+// Changes from the current branch
+=======
+// Changes from the branch being merged
+>>>>>>> branch-name
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,6 +127,15 @@
     <h3 style="color: yellow; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
     </div>
     {% endif %}
+<<<<<<< HEAD
+=======
+
+       {% if success %}
+    <div class="success">
+    <h3 style="color: yellow; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+    {% endif %}
+>>>>>>> d8a8a31b16e71e7cb35c4d6a6d2bbf5f773fcb04
       {% if error %}
     <div class="success">
     <h3 style="color: red; margin-left: 150px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">X</span></h3>
@@ -144,6 +163,7 @@
             <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
             <td>
                 <form action="/routedelete" method="POST">
+<<<<<<< HEAD
                     <input type="text" name="date" value="{{ route.date}}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
             </td>
             <td>
@@ -157,6 +177,21 @@
             </td>
             <td>
                 <input type="text" name="side_no" value="{{ route.side_no}}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+=======
+                    <input type="text" name="date" value="{{ route[3] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="depcity" value="{{ route[4] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="descity" value="{{ route[5] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="plate_no" value="{{ route[9] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="side_no" value="{{ route[8] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+>>>>>>> d8a8a31b16e71e7cb35c4d6a6d2bbf5f773fcb04
             </td>
             <td>
                 <button type="submit" style="height: 40px; width: 100px; background-color: blue; margin-left: 40px; margin-right:20px; text-align: center; color: brown; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button>

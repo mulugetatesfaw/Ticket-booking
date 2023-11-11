@@ -1,3 +1,14 @@
+
+<<<<<<< HEAD
+// Changes from the current branch
+=======
+// Changes from the branch being merged
+>>>>>>> branch-name
+
+
+
+
+
 @charset "utf-8";
 /* CSS Document */
 
@@ -1119,6 +1130,7 @@ section
         z-index: 10px;
 }
 
+<<<<<<< HEAD
 .search18
 {
         width: 100%;
@@ -1127,6 +1139,8 @@ section
         z-index: 10px;
 }
 
+=======
+>>>>>>> d8a8a31b16e71e7cb35c4d6a6d2bbf5f773fcb04
 
 
 

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <title>delete delete</title>
+=======
+<title>delete admin</title>
+>>>>>>> d8a8a31b16e71e7cb35c4d6a6d2bbf5f773fcb04
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -148,6 +152,7 @@
             <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
             <td>
                 <form action="/deletebus" method="POST">
+<<<<<<< HEAD
                     <input type="text" name="plate_no" value="{{ bus.plate_no}}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
             </td>
 
@@ -156,6 +161,16 @@
             </td>
 	       <td>
             <input type="text" name="no_seats" value="{{ bus.no_seats }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+=======
+                    <input type="text" name="plate_no" value="{{ bus[3] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+
+	   <td>
+	    <input type="text" name="sideno" value="{{ bus[4] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+	       <td>
+            <input type="text" name="no_seats" value="{{ bus[5] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+>>>>>>> d8a8a31b16e71e7cb35c4d6a6d2bbf5f773fcb04
             </td>
             <td>
                 <button type="submit" style="height: 40px; width: 100px; background-color: blue; margin-left: 40px; margin-right:20px; text-align: center; color: brown; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button>
