@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Ticket</title>
+<title>show ticket</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -50,11 +50,9 @@
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="comment">comment</a></li>
 								<li class="main_nav_item"><a href="book">book</a></li>
-								 <li class="main_nav_item"><a href="get_ticket">tickets</a></li>
-							<li class="main_nav_item"><a href="logout">logout</a></li>
+								<li class="main_nav_item"><a href="get_ticket">Show Tickets</a></li>
+								<li class="main_nav_item"><a href="logout">logout</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -96,10 +94,11 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="offers">cheeck route</a></li>
-				<li class="menu_item"><a href="book">book</a></li>
-				<li class="menu_item"><a href="logout">logout</a></li>
+				 <li class="main_nav_item"><a href="home">home</a></li>
+                                 <li class="main_nav_item"><a href="book">book</a></li>
+                                 <li class="main_nav_item"><a href="get_ticket">Show Tickets</a></li>
+                                 <li class="main_nav_item"><a href="logout">logout</a></li>
+
 			</ul>
 		</div>
 	</div></br> 
@@ -115,41 +114,14 @@
     margin-right: 40px;
   }
 </style>
-{% if success %}
-    <div class="success">
-    <h3 style="color: green; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
-    </div>
-{% endif %}
-
-<style>
-    body {
-        background-color: pink;
-    }
-
-    .error {
-        background-color: lightcoral;
-        display: inline-block;
-        padding: 10px;
-        margin-left: 20px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .symbol {
-        background-color: pink;
-        color: black;
-        font-size: 24px;
-        padding: 5px;
-        margin-left: 70px;    }
-</style>
-    <h1 style="color: blue; text-align: right; white-space: nowrap;"><b style="color:green;">Travel Date</b></h1>
-    <div class="search11">
+</br></br></br></br></br>
+    <div class="search12">
       <div class="container fill_height">
         <div class="row fill_height">
           <div class="col fill_height">
             <div class="search_panel active">
               <form action="get_ticket" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-<div class="search_item">
+		      <div class="search_item">
 </br></br>
 <style>                  
 #firstname {
@@ -158,6 +130,7 @@ height: 40px;
 }
 </style>
   		    <div class="form-row">
+		   <h1 style="color: blue; text-align: right; white-space: nowrap;margin-left:370px;"></b>Show Ticket</b></h1></br>
   		    <div style="display: flex; align-items: center; margin-left: 300px;">
   		    <div style="margin-right: 10px; white-space: nowrap;">first name:</div>
 		    <!--
@@ -251,46 +224,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 		    </div>
-		    <!--
-		    <div style="display: flex; align-items: center; margin-left: 300px;">
-                    <div>Phone:</div>
-		    
-                    <input type="text" style="margin-left: 25px;" size="30" id="firstname" onKeyPress="return onlyNum(event)" pattern="[0-9]{10}" style="margin-left: 10px;" name="phone" maxlength="10" required="Phone is required" class="center-input">
-		    
-
- <input type="text" style="margin-left: -3px;" size="30" id="firstname" style="margin-left: 10px;" class="check_out search_input wide-input" size="30" maxlength="10" oninput="validatePhone(this)" pattern="[0-9]+" name="phone" maxlength="10" required>
-        <div id="phoneError" style="color: red;">
-<script>
-function validatePhone(input) {
-    var phoneError = document.getElementById("phoneError");
-    var phoneNumber = input.value.replace(/[^0-9]/g, '');
-    if (isNaN(parseInt(phoneNumber))) {
-        phoneError.textContent = "Please enter a number for phone number.";
-        input.setCustomValidity("Please enter a number.");
-    } else if (!phoneNumber.startsWith("09")) {
-        phoneError.textContent = "Please start with 09.";
-        input.setCustomValidity("Please start with 09.");
-    } else if (phoneNumber.length !== 10) {
-        phoneError.textContent = "Please enter 10 digits only.";
-        input.setCustomValidity("Please enter 10 digits only.");
-    } else {
-        phoneError.textContent = "";
-        input.setCustomValidity("");
-    }
-}
-</script></div>
-
-		    </div>
-
-		    -->
-
 		    <div style="display: flex; align-items: center; margin-left: 300px;">
 		    <div>Departure:</div>
 		    <select style="width: 280px; margin-left: -30px;" name="depcity" id="gender-input" class="check_in search_input" required="Select Departure city.">
         <option value=""style="color: green; font-weight: bold;"><h1>Select Departure</h1></option>
 {% if des %}
         {% for depcity in des %}
-        <!--<option value="{{ depcity.depcity}}">{{ depcity.depcity }}</option>-->
         <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
         {% endfor %}
     {% endif %}
@@ -299,40 +238,23 @@ function validatePhone(input) {
 		    </div>		    
 		    <div style="display: flex; align-items: center; margin-left: 300px;">
                     <div>Destination:</div>
-		    <!--
-                    <input type="text"style="margin-left: -37px;" size="30" name="descity" id="firstname" placeholder="descity"  maxlength="20" required="descity is required" class="center-input">
-
-		    -->
-
 <select style="width: 280px; margin-left: -40px;" name="descity" id="gender-input" class="check_in search_input" required="Select Departure city.">
         <option value=""style="color: green; font-weight: bold;"><h1>Select Destination</h1></option>
 {% if des %}
         {% for depcity in des %}
-        <!--<option value="{{ depcity.depcity}}">{{ depcity.depcity }}</option>-->
         <option value="{{ depcity.depcity }}" style="color: blue; font-weight: bold;">{{ depcity.depcity }}</option>
         {% endfor %}
     {% endif %}
 </select>
 
-
-
-
-
-
-
-
-
 		    </div>
 		    <div style="display: flex; align-items: center; margin-left: 300px;">
 		    <div style="margin-right: 10px; white-space: nowrap;">Travel Date:</div>
                     <input type="date" style="margin-left: -8px; width: 280px;" size="30" name="date" id="firstname"  maxlength="20" required="descity is required" class="center-input">
-		    <!--
-		    		                                                        <input type="date" class="check_out search_input" name="date" placeholder="date" required>
-		    -->
 
 		    </div>
 		    <div style="text-align: center; margin-left: 460px;">
-		    <button class="button search_button">Get</button></br></br>
+		    <button class="button search_button">Show</button></br></br>
 		    </div>
 	  	  </div>
                 </div>
@@ -425,38 +347,41 @@ function validatePhone(input) {
 		</div>
 </div>
 </div>
-<div class="copyright">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-3 order-lg-1 order-2  ">
-			<div class="copyright_content d-flex flex-row align-items-center">
-				<div>
-&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://colorlib.com" target="_blank">Alx student </a>
-</div>
-			</div>
-		</div>
-		<div class="col-lg-9 order-lg-2 order-1">
-			<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
-				<div class="footer_nav">
-					<ul class="footer_nav_list">
-				<li class="menu_item"><a href="home">home</a></li>
-                                <li class="menu_item"><a href="offers">cheeck route</a></li>
-                                <li class="menu_item"><a href="book">book</a></li>
-                                <li class="menu_item"><a href="logout">logout</a></li>
 
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
+
+
+
+<div class="copyright">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-lg-3 order-lg-1 order-2  ">
+                                        <div class="copyright_content d-flex flex-row align-items-center">
+                                                <div>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved designed by guzo team <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Ticket team</a></div>                                      </div>
+                                </div>
+                                <div class="col-lg-9 order-lg-2 order-1">
+                                        <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+                                                <div class="footer_nav">
+                                                        <ul class="footer_nav_list">
+                                                                <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                                <li class="main_nav_item"><a href="book">book</a></li>
+                                                                <li class="main_nav_item"><a href="logout">logout</a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
 </div>
 <script src="../static/js/jquery-3.2.1.min.js"></script>
 <script src="../static/styles/bootstrap4/popper.js"></script>
 <script src="../static/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="../static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="../static/plugins/Isotope/isotope.pkgd.min.js"></script>
 <script src="../static/plugins/easing/easing.js"></script>
-<script src="../static/js/custom.js"></script>
+<script src="../static/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="../static/js/offers_custom.js"></script>
 </body>
 </html>
+

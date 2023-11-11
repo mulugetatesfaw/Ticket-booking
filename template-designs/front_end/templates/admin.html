@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>register</title>
+<title>admin account</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -58,12 +58,14 @@
 						</div>
 						<div class="main_nav_container ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-								<li class="main_nav_item"><a href="about">about us</a></li>
-								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
-								<li class="main_nav_item"><a href="comment">comment</a></li>
-								<li class="main_nav_item"><a href="contact.html">contact</a></li>
+							<li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Registor Route</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;margin-left:50px;">Logout</a></li>
 							</ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -109,38 +111,171 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 			<ul>
-				<li class="menu_item"><a href="home">home</a></li>
-				<li class="menu_item"><a href="about">about us</a></li>
-				<li class="menu_item"><a href="offers">cheeck route</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
-				<li class="menu_item"><a href="comment">comment</a></li>
-				<li class="menu_item"><a href="contact.html">contact</a></li>
+			
+
+
+			<li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Registor Route</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;margi-left:50px;">Logout</a></li>
+
 			</ul>
 		</div>
 	</div>
+
 <div class="search1">
+
+
 								<div class="container fill_height">
 									<div class="row fill_height">
 										<div class="col fill_height">
 											<div class="search_panel active">
-
 <form action="#" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-    <div class="search_item">
-	<span style="display: inline-block; white-space: nowrap; margin-left: 350px;"><b><h2 style="color: black; margin: 0;">Admin Register</h2></b></span></br></br></br>
-    <div style="display: flex; align-items: center; margin-left: 280px;">
+	<div class="search_item">
+		</br></br></br></br></br></br></br></br>                                                                                             {% if success %}
+<div class="success">
+    <h3 style="color: green; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+{% endif %}
+ {% if error %}
+    <div class="success">
+	    <h3 style="color: red; margin-left: 150px;"><b>{{ error }}<span style="margin-left:30px;" class="symbol">X</b></span></h3>
+    </div>
+    {% endif %}
+
+<span style="display: inline-block; white-space: nowrap; margin-left: 250px;"><b><h2 style="color: black; margin: 0;color:blue;"><b>Create New Admin Acount</b></h2></b></span></br></br></br>
+
+
+
+
+
+
+
+
+
+
+<div style="display: flex; align-items: center;">
+        <span style="margin-right: 10px;margin-left:280px;">First</span>
+            <span>name:</span>
+            <div>
+<input type="text" size="30" id="firstname" name="fname" maxlength="15" size ="20px" class="check_in search_input wide-input" style="margin-left: 7px; width: 260px; text-align: center; text-transform: capitalize;" oninput="validatedepcity(this)" required="descity is required" class="center-input"><span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;"></span>
+<script>
+function validatedepcity(input) {
+  var value = input.value.trim();
+  var errorMessage = document.getElementById("error-message");
+
+  if (!value.match(/^[a-zA-Z]+$/)) {
+    errorMessage.textContent = "Please enter a character for city.";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("Please enter a character for city.");
+  } else if (value.length < 4) {
+    errorMessage.textContent = "Please enter at least 4 characters.";
+    input.setCustomValidity("Please enter at least 4 characters.");
+    errorMessage.style.display = "block";
+  } else {
+    errorMessage.style.display = "none";
+    input.setCustomValidity("");
+  }
+
+  input.value = value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var input = document.getElementById("mySelect");
+  var errorMessage = document.getElementById("error-message");
+
+  if (!input.value.trim()) {
+    errorMessage.textContent = "";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("");
+  }
+});
+</script>
+</div>
+</div>
+
+
+<div style="display: flex; align-items: center;">
+        <span style="margin-right: 10px;margin-left:280px;">First</span>
+            <span>name:</span>
+            <div>
+<input type="text" size="30" id="firstname" name="lname" maxlength="15" size ="20px" class="check_in search_input wide-input" style="margin-left: 7px; width: 260px; text-align: center; text-transform: capitalize;" oninput="validatedepcity(this)" required="descity is required" class="center-input"><span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;"></span>
+<script>
+function validatedepcity(input) {
+  var value = input.value.trim();
+  var errorMessage = document.getElementById("error-message");
+
+  if (!value.match(/^[a-zA-Z]+$/)) {
+    errorMessage.textContent = "Please enter a character for city.";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("Please enter a character for city.");
+  } else if (value.length < 4) {
+    errorMessage.textContent = "Please enter at least 4 characters.";
+    input.setCustomValidity("Please enter at least 4 characters.");
+    errorMessage.style.display = "block";
+  } else {
+    errorMessage.style.display = "none";
+    input.setCustomValidity("");
+  }
+
+  input.value = value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var input = document.getElementById("mySelect");
+  var errorMessage = document.getElementById("error-message");
+
+  if (!input.value.trim()) {
+    errorMessage.textContent = "";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("");
+  }
+});
+</script>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div style="display: flex; align-items: center; margin-left: 280px;">
     <span style="margin-right: 10px;">First</span>
     <span>name:</span>
     <div>
         <input type="text" name="fname" class="check_in search_input wide-input" id="gender-input" style="margin-left: 7px;" size="20" required>
     </div>
 </div>
+
         <div style="display: flex; align-items: center; margin-left: 280px;">
             <span style="margin-right: 10px;">Last</span>
             <span>name:</span>
             <div>
-                <input type="text" name="lname" id="gender-input" style="margin-left: 8px;" class="check_out search_input wide-input" required>
+                <input type="text" name="lname" id="gender-input" style="margin-left: 10px;" class="check_out search_input wide-input" required>
             </div>
         </div>
+-->
         <div style="display: flex; align-items: center; margin-left: 280px;">
             <span style="margin-right: 10px;">User</span>
             <span>name:</span>
@@ -152,7 +287,7 @@
         <div style="display: flex; align-items: center;margin-left: 280px;">
     <span style="margin-right: 10px;">Password:</span>
     <div>
-        <input type="password" id="gender-input" style="margin-left: 9px;" name="password" class="check_out search_input wide-input" maxlength="15" required size="20"> </div>
+        <input type="password" id="gender-input" style="margin-left: 11px;" name="password" class="check_out search_input wide-input" maxlength="15" required size="20"> </div>
 </div>
 <style>
     #gender-input {
@@ -161,7 +296,7 @@
 <div style="display: flex; align-items: center; margin-left: 280px;">
     <span style="margin-right: 10px;">Gender:</span>
     <div>
-        <select name="gender" id="gender-input" style="margin-left: 23px;" class="check_out search_input wide-input"  required>
+        <select name="gender" id="gender-input" style="margin-left: 25px;" class="check_out search_input wide-input"  required>
             <option value="" disabled selected style="color: white;">Select Gender</option>
             <option value="male" style="color: blue;">Male</option>
             <option value="female" style="color: blue;">Female</option>
@@ -199,7 +334,7 @@ function validatePhone(input) {
 <div style="display: flex; align-items: center;margin-left: 280px;">
 <span style="margin-right: 10px;">Email:</span>
 <div>
-<input type="email" name="email" style="margin-left: 35px;" id="gender-input" class="check_out search_input wide-input" oninput="validateEmail(this)" required>
+<input type="email" name="email" style="margin-left: 40px;" id="gender-input" class="check_out search_input wide-input" oninput="validateEmail(this)" required>
     <div id="emailError" style="color: red;"></div>
     </div>
 </div>
@@ -216,7 +351,7 @@ function validateEmail(input) {
     }
 }
 </script>
-   <button class="button search_button" style="margin-left: 420px;">Register</button>
+   <button class="button search_button" style="margin-left: 420px;">Creat</button>
     </div>
 </form>
 
@@ -331,11 +466,14 @@ function validateEmail(input) {
 			<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
 				<div class="footer_nav">
 					<ul class="footer_nav_list">
-						<li class="footer_nav_item"><a href="home">home</a></li>
-						<li class="footer_nav_item"><a href="about">about us</a></li>
-						<li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-						<li class="footer_nav_item"><a href="blog.html">news</a></li>
-						<li class="footer_nav_item"><a href="contact.html">contact</a></li>
+						<li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Registor Route</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
 					</ul>
 				</div>
 			</div>

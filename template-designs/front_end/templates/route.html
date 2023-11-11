@@ -49,16 +49,14 @@
 						</div>
 						<div class="main_nav_container ml-auto">
 						<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="home">home</a></li>
-                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
-                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
-                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
-                                                                <li class="footer_nav_item"><a href="users">users</a></li>
-                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
-                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
-
-                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
-                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+						  <li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Registor Route</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
 						  </ul>
 						</div>
 						<div class="content_search ml-lg-0 ml-auto">
@@ -100,15 +98,14 @@
 			<div class="menu_close_container"><div class="menu_close"></div></div>
 			<div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
 		   <ul>
-		        <li class="main_nav_item"><a href="home">home</a></li>
-                        <li class="main_nav_item"><a href="businsert">insert bus</a></li>
-                        <li class="main_nav_item"><a href="route">route insert</a></li>
-                        <li class="main_nav_item"><a href="routes">routes</a></li>
-                        <li class="footer_nav_item"><a href="users">users</a></li>
-                        <li class="footer_nav_item"><a href="buses">buses</a></li>
-                        <li class="footer_nav_item"><a href="admin">admin acount</a></li>
-                        <li class="footer_nav_item"><a href="city">insert city</a></li>
-                        <li class="footer_nav_item"><a href="logout">logout</a></li>
+		    <li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Registor Route</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;margin-left:50px;">Logout</a></li>
 		 </ul>
 		</div>
 	</div>
@@ -162,21 +159,11 @@
         <h3 style="color: red; margin-left: 80px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">x</span></h3>
     </div>
 {% endif %}
-
-
-
-
-
-
-
-
-
 	      {% if success %}
         <div class="success">
         <h3 style="color: green; margin-left: 80px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
     </div>
 {% endif %}
-
             <div class="search_item">
               <div style="display: flex; justify-content: center; align-items: center;">
                 <b><h1 style="text-align: center; color: blue;">Register Route</h1></b>
@@ -219,38 +206,87 @@
               </tr>
               </tbody>
               </table>
-              <div style="display: flex; align-items: center;">
-              <div style="margin-right: 45px; text-align: right;">Travel Date</div>
-              <input type="date" size="30" name="date" placeholder="date" id="gender-input" class="check_in search_input" required maxlength="20" style="text-align: center;">
-	      </div>
-              <div style="display: flex; align-items: center;">
-                <div style="margin-right: 90px; text-align: right;">Price</div>
-	<!--	<input type="text" size="30" id="gender-input" maxlength="4" name="price" required="price is required" class="check_in search_input" style="text-align: center;"> 
-	-->
-	<!--
-	<input type="text" size="30" id="gender-input" maxlength="4" name="price" required="required" class="check_in search_input" style="text-align: center;" oninput="validatePrice(this)" required="please ensert requiremnt format"><span id="error-message" style="color: red; display: none;"></span>
+		<div style="display: flex; align-items: center;">
+                <div style="margin-right: 52px; text-align: right;">kilometer:</div>
+		<input type="text" size="30" id="gender-input" maxlength="4" value ="{{distance}}" name="kilometer" required="required" class="check_in search_input" style="text-align: center;" oninput="validatekilo(this)" required="please enter required format"><span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;">Please enter a number for the price.</span>
 
 <script>
-function validatePrice(input) {
-  var value = input.value.trim();
-  var errorMessage = document.getElementById("error-message");
+function validatekilo(input) {
+var value = input.value.trim();
+var errorMessage = document.getElementById("error-message");
 
   if (isNaN(value)) {
-    errorMessage.textContent = "Please enter a number for the price.";
-    input.setCustomValidity("Please enter a number.");
+    errorMessage.textContent = "Please enter a number for the kilometer.";
     errorMessage.style.display = "block";
+    input.setCustomValidity("Please enter a number.");
   } else if (value.length !== 3 && value.length !== 4) {
-    errorMessage.textContent = "Please enter a 3 or 4-digit price.";
-    input.setCustomValidity("Please enter 3 or 4 digits only.");
+    errorMessage.textContent = "Please enter a 3 or 4 digit number.";
+    input.setCustomValidity("Please enter a 3 or 4 digit number.");
     errorMessage.style.display = "block";
   } else {
     errorMessage.style.display = "none";
+    input.setCustomValidity("");
   }
 }
-       -->
+</script>
+</div>
+
+
+
+
+
+
+
+              <div style="display: flex; align-items: center;">
+              <div style="margin-right: 45px; text-align: right;">Travel Date</div>
+              <!--
+	      <input type="date" size="30" name="date" placeholder="date" id="gender-input" class="check_in search_input" required maxlength="20" style="text-align: center;">-->
+	      
+<input type="date" size="30" name="date" id="gender-input" class="check_in search_input" required maxlength="20" style="text-align: center;" onchange="updateDateInput(this)">
+<!--<input type="hidden" name="date" id="date-input">-->
+
+<input type="hidden" name="date" id="date-input" value="">
+
+<script>
+  function updateDateInput(input) {
+    var hiddenInput = document.getElementById("date-input");
+    var dateValue = new Date(input.value);
+    dateValue.setDate(dateValue.getDate() + 1);
+
+    if (!isNaN(dateValue.getTime())) {
+      var year = dateValue.getFullYear();
+      var month = String(dateValue.getMonth() + 1).padStart(2, '0');
+      var day = String(dateValue.getDate() + 1).padStart(2, '0');
+
+      var formattedDate = `${year}-${month}-${day}`;
+
+      hiddenInput.value = formattedDate;
+    }
+  }
+</script>
+</div>
+
+                <div style="display: flex; align-items: center;">
+                <div style="margin-right: 90px; text-align: right;">Price</div>
+<!--
 <input type="text" size="30" id="gender-input" maxlength="4" name="price" required="required" class="check_in search_input" style="text-align: center;" oninput="validatesideno(this)" required="please enter required format">
 <span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;">Please enter a number for the price.</span>
+-->
+<input type="text" size="30" id="gender-input" maxlength="4" name="price" required="required" class="check_in search_input" style="text-align: center;" oninput="validatesideno(this)" required="please enter required format">
+<input type="hidden" name="descity" id="hidden-price-input">
 
+<script>
+  // Get the visible input element
+  var visibleInput = document.getElementById("gender-input");
+
+  // Get the hidden input element
+  var hiddenInput = document.getElementById("hidden-price-input");
+
+  // Add an event listener to the visible input element
+  visibleInput.addEventListener("input", function() {
+    hiddenInput.value = visibleInput.value;
+  });
+</script>
 <script>
 function validatesideno(input) {
   var value = input.value.trim();
@@ -270,6 +306,9 @@ function validatesideno(input) {
   }
 }
 </script>
+</div>
+
+	     <!--
 	      </div>
 	      <div style="display: flex; align-items: center;">
                 <div style="margin-right: 52px; text-align: right;">kilometer:</div>
@@ -277,8 +316,8 @@ function validatesideno(input) {
 
 <script>
 function validatekilo(input) {
-  var value = input.value.trim();
-  var errorMessage = document.getElementById("error-message");
+var value = input.value.trim();
+var errorMessage = document.getElementById("error-message");
 
   if (isNaN(value)) {
     errorMessage.textContent = "Please enter a number for the kilometer.";
@@ -294,46 +333,38 @@ function validatekilo(input) {
   }
 }
 </script>
-	      </div>
-	  <div style="display: flex; align-items: center;">
-                <div style="margin-right: 70px; text-align: right;">Side_no:</div>
- <input type="text" size="30" id="gender-input" maxlength="4" name="side_no" required="required" class="check_in search_input" style="text-align: center;" oninput="validateside(this)" required="please enter required format">  <span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;">Please enter a number for the sideno.</span>
-<script>
-function validateside(input) {
-  var value = input.value.trim();
-  var errorMessage = document.getElementById("error-message");
-  if (isNaN(value)) {
-    errorMessage.textContent = "Please enter a number for the sideno.";
-    errorMessage.style.display = "block";
-    input.setCustomValidity("Please enter a number.");
-  } else if (value.length !== 4) {
-    errorMessage.textContent = "Please enter a 4-digit sideno.";
-    input.setCustomValidity("Please enter a 4-digit number.");
-    errorMessage.style.display = "block";
-  } else {
-    errorMessage.style.display = "none";
-    input.setCustomValidity("");
-  }
-}
-</script>
 </div>
-<script>
-    function updateBusId(selectedPlateNo) {
-      var busIdInput = document.getElementById('busIdInput');
-
-      // Copy the selected plate_no value to bus_id
-      busIdInput.value = selectedPlateNo;
-    }
-  </script>
- <table>
-    <tbody>
-      <tr>
-        <td>
-          <div>
-	     <div style="display: flex; align-items: center;">
-	    <div style="margin-right: 55px; text-align: right;">Select Bus:</div>
-            <select name="plate_no" class="check_in search_input" style="text-align: center;" id="gender-input" onchange="updateBusId(this.value)" required>
-              <option value="">Select Bus:</option>
+-->
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <div style="display: flex; align-items: center;">
+            <div style="margin-right: 70px; text-align: right;">Side_no:</div>
+            <select name="side_no" required="required" class="check_in search_input" style="text-align: center; width:260px;" id="side-no-input" onchange="updateSelect(this.selectedIndex)" required>
+              <option value="">Select Side No:</option>
+              {% if data %}
+                {% for d in data %}
+                  <option value="{{ d.sideno }}">{{ d.sideno }}</option>
+                {% endfor %}
+              {% endif %}
+            </select>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <div style="display: flex; align-items: center;">
+            <div style="margin-right: 55px; text-align: right;">Select Bus:</div>
+            <select name="plate_no" class="check_in search_input" style="text-align: center; width:260px;" id="plate-no-input" onchange="updateSelect(this.selectedIndex)" required>
+              <option value="">Select Plate No:</option>
               {% if data %}
                 {% for d in data %}
                   <option value="{{ d.plate_no }}">{{ d.plate_no }}</option>
@@ -341,15 +372,17 @@ function validateside(input) {
               {% endif %}
             </select>
           </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <!--
-  <div style="display: flex; align-items: center;">
-    <div style="margin-right: 53px; text-align: right;">Bus ID:</div>
-    <input type="text" size="30" name="bus_id" value="" id="busIdInput" maxlength="10" style="text-align: center;" class="check_in search_input"> </div>
-  -->
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  function updateSelect(selectedIndex) {
+    document.getElementById("side-no-input").selectedIndex = selectedIndex;
+    document.getElementById("plate-no-input").selectedIndex = selectedIndex;
+  }
+</script>
  <div style="display: flex; justify-content: center; align-items: center;">
  <input type="submit" value="Submit" class="btn btn-primary">
  </div>
@@ -363,6 +396,316 @@ function validateside(input) {
   </div>
 </div>
 
+
+<!--
+<div class="search11 d-flex justify-content-center">
+    <div class="row">
+      <div class="col">
+        <div class="search_panel active">
+          <form action="route" method="post" id="search_form_1" class="search_panel_content">
+           </br></br></br></br></br></br></br</br></br></br></br>
+          {% if error %}
+        <div class="error">
+        <h3 style="color: red; margin-left: 80px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">x</span></h3>
+    </div>
+{% endif %}
+              {% if success %}
+        <div class="success">
+        <h3 style="color: green; margin-left: 80px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+{% endif %}
+
+            <div class="search_item">
+              <div style="display: flex; justify-content: center; align-items: center;">
+                <b><h1 style="text-align: center; color: blue;">Register Route</h1></b>
+              </div>
+                <table>
+                <tbody>
+                  <tr>
+                    <td>
+  <div style="display: flex; align-items: center;">
+  <div style="margin-right: 18px; text-align: right;">Departure City:</div>
+ <select name="depcity" id="gender-input" class="check_in search_input" style="text-align: center;" required>
+    <option value="">Select Departure</option>
+
+{% if des %}
+        {% for depcity in des %}
+            <option value="{{ depcity.depcity}}">{{ depcity.depcity }}</option>
+	    {% endfor %}
+	    {% endif %}
+</select>
+</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+                <table>
+                <tbody>
+                  <tr>
+                    <td>
+                        <div style="display: flex; align-items: center;">
+                        <div style="margin-right: 12px; text-align: right;">Desparture City:</div>
+<select name="descity" class="check_in search_input" style="text-align: center;" id="gender-input" required>
+    <option value="">Select Departure</option>
+    {% if des %}
+    {% for descity in des %}
+        <option value="{{ descity.depcity}}">{{ descity.depcity}}</option>
+        {% endfor %}
+    {% endif %}
+</select>
+</div>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+              <div style="display: flex; align-items: center;">
+              <div style="margin-right: 45px; text-align: right;">Travel Date</div>
+
+
+	  
+
+	     <script>
+  function addOneDay() {
+    var inputElement = document.getElementById("date-input");
+    var dateValue = inputElement.value;
+    var dateObj = new Date(dateValue);
+    dateObj.setDate(dateObj.getDate() + 1);
+
+    inputElement.style.display = "none";
+
+    var hiddenInputElement = document.getElementById("hidden-date-input");
+    hiddenInputElement.value = dateObj.toISOString().split('T')[0];
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+              <input type="date" size="30" name="date"  id="gender-input" class="check_in search_input" required maxlength="20" style="text-align: center;">
+	      <input type="hidden" name="date" id="hidden-date-input">
+-->
+<input type="date" size="30" name="date" id="gender-input" class="check_in search_input" required maxlength="20" style="text-align: center;" onchange="updateDateInput(this)">
+<!--<input type="hidden" name="date" id="date-input">-->
+
+<input type="hidden" name="date" id="date-input" value="">
+
+<script>
+  function updateDateInput(input) {
+    var hiddenInput = document.getElementById("date-input");
+    var dateValue = new Date(input.value);
+    dateValue.setDate(dateValue.getDate() + 1);
+
+    if (!isNaN(dateValue.getTime())) {
+      var year = dateValue.getFullYear();
+      var month = String(dateValue.getMonth() + 1).padStart(2, '0');
+      var day = String(dateValue.getDate() + 1).padStart(2, '0');
+
+      var formattedDate = `${year}-${month}-${day}`;
+
+      hiddenInput.value = formattedDate;
+    }
+  }
+</script>
+<!--
+<script>
+  function updateDateInput(input) {
+    var hiddenInput = document.getElementById("date-input");
+    hiddenInput.value = input.value;
+  }
+</script>-->
+
+	      </div>
+              <div style="display: flex; align-items: center;">
+              <div style="margin-right: 90px; text-align: right;">Price</div>
+
+<input type="text" size="30" id="gender-input" maxlength="4" name="price" required="required" class="check_in search_input" style="text-align: center;" oninput="updateHiddenInput(this)" required="please enter required format">
+<input type="hidden" name="price" id="price-input" style="display: none;">
+<script>
+  function updateHiddenInput(input) {
+    var hiddenInput = document.getElementById("price-input");
+    hiddenInput.value = input.value;
+  }
+</script>
+<span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;">Please enter a number for the price.</span>
+
+
+<script>
+function validatesideno(input) {
+  var value = input.value.trim();
+  var errorMessage = document.getElementById("error-message");
+  if (isNaN(value)) {
+    errorMessage.textContent = "Please enter a number for the price.";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("Please enter a number.");
+  } else if (value.length !== 3 && value.length !== 4) {
+    errorMessage.textContent = "Please enter a 3 or 4 digit number.";
+    input.setCustomValidity("Please enter a 3 or 4 digit number.");
+    errorMessage.style.display = "block";
+  } else {
+    errorMessage.style.display = "none";
+    input.setCustomValidity("");
+  }
+}
+
+
+
+<div style="display: flex; align-items: center;">
+                <div style="margin-right: 52px; text-align: right;">kilometer:</div>
+               <input type="text" size="30" id="gender-input" maxlength="4" name="kilometer" required="required" class="check_in search_input" style="text-align: center;" oninput="validatekilo(this)" required="please enter required format"><span id="error-message" style="color: red; display: none; position: absolute; top: 100%; left: 0;">Please enter a number for the price.</span>
+
+<script>
+function validatekilo(input) {
+var value = input.value.trim();
+var errorMessage = document.getElementById("error-message");
+
+  if (isNaN(value)) {
+    errorMessage.textContent = "Please enter a number for the kilometer.";
+    errorMessage.style.display = "block";
+    input.setCustomValidity("Please enter a number.");
+  } else if (value.length !== 3 && value.length !== 4) {
+    errorMessage.textContent = "Please enter a 3 or 4 digit number.";
+    input.setCustomValidity("Please enter a 3 or 4 digit number.");
+    errorMessage.style.display = "block";
+  } else {
+    errorMessage.style.display = "none";
+    input.setCustomValidity("");
+  }
+}
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <div style="display: flex; align-items: center;">
+            <div style="margin-right: 70px; text-align: right;">Side_no:</div>
+	 
+	    <input type ="hidden", name="side_no" id="side-no-input">
+            <select name="side_no" required="required" class="check_in search_input" style="text-align: center; width:260px;" id="side-no-input" onchange="updateSelect(this.selectedIndex)" required>
+	  
+
+
+              <option value="">Select Side No:</option>
+              {% if data %}
+                {% for d in data %}
+                  <option value="{{ d.sideno }}">{{ d.sideno }}</option>
+                {% endfor %}
+              {% endif %}
+            </select>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <div style="display: flex; align-items: center;">
+            <div style="margin-right: 55px; text-align: right;">Select Bus:</div>
+	    <script>
+  function populateHiddenElement() {
+    var visibleInput = document.getElementById("plate-no-input");
+    var hiddenInput = document.getElementById("hidden-input");
+
+    hiddenInput.value = visibleInput.value;
+  }
+
+  function hideElement() {
+    var visibleInput = document.getElementById("plate-no-input");
+    visibleInput.style.display = "none";
+  }
+</script>
+	    <input type="hidden" name="plate_no" id="hidden-input">
+            <select name="plate_no" class="check_in search_input" style="text-align: center; width:260px;" id="plate-no-input" onchange="updateSelect(this.selectedIndex)" required>
+              <option value="">Select Plate No:</option>
+              {% if data %}
+                {% for d in data %}
+                  <option value="{{ d.plate_no }}">{{ d.plate_no }}</option>
+                {% endfor %}
+              {% endif %}
+            </select>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  function updateSelect(selectedIndex) {
+    document.getElementById("side-no-input").selectedIndex = selectedIndex;
+    document.getElementById("plate-no-input").selectedIndex = selectedIndex;
+  }
+</script>
+ <div style="display: flex; justify-content: center; margin-left: 120px; align-items: center;">
+ <input type="submit" value="Submit" class="btn btn-primary">
+ </div>
+ </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
 <div class="cta_slider_nav cta_slider_prev">
                                         <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                 width="28px" height="33px" viewBox="0 0 28 33" enable-background="new 0 0 28 33" xml:space="preserve">
@@ -413,12 +756,15 @@ function validateside(input) {
                         <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
                                 <div class="footer_nav">
                                         <ul class="footer_nav_list">
-                                                <li class="footer_nav_item"><a href="home">home</a></li>
-                                                <li class="footer_nav_item"><a href="businsert">bus insert</a></li>
-                                                <li class="footer_nav_item"><a href="route">Route Insert</a></li>
-                                                <li class="footer_nav_item"><a href="routes">Show routes</a></li>
-                                                <li class="footer_nav_item"><a href="buses">Show Bus</a></li>
-                                                <li class="footer_nav_item"><a href="comments">Show comment</a></li>
+                                           <li class="main_nav_item"><a href="home">home</a></li>
+<li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+<li class="main_nav_item"><a href="route">Route Registor</a></li>
+<li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+<li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Show</option><option value="routes">show routes</option><option value="users">show Users</option><option value="buses">show Buses</option><option value="comments">All Comments</option></select>
+<select onchange="location.href = this.value;"><option value="admindelete">Select for Delete</option><option value="admindelete">Delete Admin</option><option value="commentdelete">Delete Comment</option><option value="busdelete">Delete Bus</option><option value="citydelete">Delete City</option><option value="routedelete">Delete Route</option></select>
+<li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+						
                                         </ul>
                                 </div>
                         </div>
@@ -435,5 +781,3 @@ function validateside(input) {
 <script src="../static/js/custom.js"></script>
 </body>
 </html>
-
-

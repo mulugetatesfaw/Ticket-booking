@@ -6,11 +6,11 @@ data = [
     {
         "fname": "ananya",
         "lname": "tamre",
-        "username": "ananya",
+        "username": "hello",
         "password": "12345678",  # Encrypted password should be a string
         "phone": 987655444,
         "gender": "male",
-        "email": "ananya@gmail.com"
+        "email": "anany@gmail.com"
     }
 ]
 

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>comment delete</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travelix Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../static/styles/bootstrap4/bootstrap.min.css">
+<link href="../static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../static/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="../static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="../static/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="../static/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="../static/styles/responsive.css">
+</head>
+
+
+
+<body style="background-color: lightblue;">
+
+<div class="super_container">
+                <!-- Header -->
+<header class="header">
+                <!-- Top Bar -->
+                <div class="top_bar">
+                        <div class="container">
+                                <div class="row">
+                                        <div class="col d-flex flex-row">
+                                                <div class="phone">+251-11-551 82 92</div>
+                                                <div class="social">
+                                                        <ul class="social_list">
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                                                                <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+		<nav class="main_nav">
+                        <div class="container">
+                                <div class="row">
+                                        <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                                                <div class="logo_container">
+                                                        <div class="logo"><a href="#"><img src="../static/images/logo.png" alt="">ticket</a></div>
+                                                </div>
+                                                <div class="main_nav_container ml-auto">
+                                                        <ul class="main_nav_list">
+                                                       <!--  <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+							-->
+							<li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Registor Route</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
+
+                                                        </ul>
+                                                </div>
+                                                <div class="content_search ml-lg-0 ml-auto">
+                                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                                                <g>
+                                                                        <g>
+                                                                                <g>
+                                                                                        <path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
+                                                                                        s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
+                                                                                        C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
+                                                                                        M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
+                                                                                        c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
+                                                                                </g>
+                                                                        </g>
+                                                                        <g>
+                                                                                <g>
+                                                                                        <path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
+                                                                                        c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
+                                                                                        C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
+                                                                                </g>
+                                                                        </g>
+                                                                </g>
+                                                        </svg>
+                                                </div>
+                                                <form id="search_form" class="search_form bez_1">
+                                                        <input type="search" class="search_content_input bez_1">
+                                                </form>
+                                                <div class="hamburger">
+                                                        <i class="fa fa-bars trans_200"></i>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </nav>
+        </header>
+<div class="menu trans_500">
+                <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="menu_close_container"><div class="menu_close"></div></div>
+                        <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
+                        <ul>
+
+			   <li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Registor Route</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
+								<!--
+
+                              					<li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+								-->
+                        </ul>
+                </div>
+        </div>
+
+	</br></br></br></br></br></br></br</br></br></br></br></br></br></br></br></br></br></br>
+	   {% if success %}
+    <div class="success">
+    <h3 style="color: yellow; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+    {% endif %}
+      {% if error %}
+    <div class="success">
+    <h3 style="color: red; margin-left: 150px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">X</span></h3>
+    </div>
+    {% endif %}
+
+
+
+
+     <h1 style="margin-left:300px;color:blue;"><b>Delete Comment</b> </h1></br>
+<table style="margin-left: 100px; width: 400px; background-color: lightgray;">
+    <thead>
+  <tr style="background-color: lightgray; width: 400px;">
+    <th style="padding-top: 10px;">
+    </th>
+</tr>
+<tr>
+    <th><h3><b style="color: red; background-color: green;">No</b></h3></th>
+    <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Name</b></h3></th>
+    <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Email</b></h3></th>
+    <th><h3><b style="color: white; background-color: green; margin-left: 40px;">phone</b></h3></th>
+</tr>
+</thead>
+    <tbody style="background-color: lightgray; margin-left: 300px;">
+        {% for coment in comments %}
+        <tr>
+            <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
+            <td>
+                <form action="/commentdelete" method="POST">
+                <input type="text" name="name" value="{{ coment.name }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="email" value="{{ coment.email}}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <input type="text" name="phone" value="{{ coment.phone }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <button type="submit" style="height: 40px; width: 100px; background-color: blue; margin-left: 40px; margin-right:20px; text-align: center; color: brown; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button>
+                </form>
+            </td>
+        </tr>
+	{% endfor %}
+    </tbody>
+</table>
+
+<!--
+<form action="/commentdelete" method="POST" style="margin-left: 200px; background-color: lightgray; padding: 20px; margin-right:300px;">
+    <table>
+        <thead>
+	<tr style="background-color: lightgray;">
+    	<th><h3><b style="color: red; background-color: green;">No</b></h3></th>
+    	<th><h3><b style="color: white; background-color: green;margin-left:40px;">Name</b></h3></th>
+    	<th><h3><b style="color: white; background-color: green; margin-left:40px;">Email</b></h3></th>
+    	<th><h3><b style="color: white; background-color: green; margin-left:40px;">Phone</b></h3></th>
+	</tr>
+        </thead>
+
+        <tbody style="background-color: lightgray;">
+            {% for coment in comments %}
+            <tr>
+                <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
+		<td>
+  <input type="text" name="name" value="{{ coment[3] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+</td>
+ <td>
+  <input type="text" name="email" value="{{ coment[4] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+</td>
+                <td>
+  <input type="text" name="phone" value="{{ coment[5] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+</td>
+                <td><button type="submit" style="height: 40px; margin-left: 50px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+-->
+	<!--
+	<form action="/delete" method="POST">
+
+	<table>
+    <thead>
+    <tr style="background-color: white;">
+    <th><h3><b style="color: blue;">No.</b></h3></th>
+    <th><h3><b style="color: blue;">First Name</b></h3></th>
+    <th><h3><b style="color: blue;">Last Name</b></h3></th>
+    <th><h3><b style="color: blue;">User Name</b></h3></th>
+</tr>
+    </thead>
+    
+
+    <tbody style="background-color:white;margin-left:50px;">
+    {% for admin in admins %}
+    <tr>
+     <td style="background-color: green;margin-left:100px;"><h3><b style="color: yellow;">{{ loop.index }}</b></h3></td>
+     <td><input type="text" name="fname" value="{{ admin[3] }}" readonly></td>
+     <td><input type="text" name="lname" value="{{ admin[4] }}" readonly></td>
+     <td><input type="text" name="username" value="{{ admin[5] }}" readonly></td>
+      <td><button type="submit" style="margin-left: 20px;"><b style="color: red;">Delete</b></button></td>
+     </tr>
+     {% endfor %}
+</tbody>
+</table>
+</form>
+
+-->
+</br></br></br</br></br>
+  </br></br></br>
+  <div class="copyright">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-lg-3 order-lg-1 order-2  ">
+                                        <div class="copyright_content d-flex flex-row align-items-center">
+                                                <div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#">Ticket Team</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                                        </div>
+                                </div>
+                                <div class="col-lg-9 order-lg-2 order-1">
+                                        <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+                                                <div class="footer_nav">
+							<ul class="footer_nav_list">
+
+
+
+								<li class="main_nav_item"><a href="home">home</a></li>
+                           <li class="main_nav_item"><a href="businsert">Registor Bus</a></li>
+                           <li class="main_nav_item"><a href="route">Registor Route</a></li>
+                           <li class="footer_nav_item"><a href="admin" style="color:white;">Create Admin</a></li>
+                           <li class="footer_nav_item"><a href="city" style="color:white;">Registor City</a></li>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Show</option>
+                           <option value="routes">show routes</option>
+                           <option value="users">show Users</option>
+                           <option value="buses">show Buses</option>
+                           <option value="comments">All Comments</option>
+                           </select>
+                           <select onchange="location.href = this.value;">
+                           <option value="admindelete">Select for Delete</option>
+                           <option value="admindelete">Delete Admin</option>
+                           <option value="commentdelete">Delete Comment</option>
+                           <option value="busdelete">Delete Bus</option>
+                           <option value="citydelete">Delete City</option>
+                           <option value="routedelete">Delete Route</option>
+                           </select>
+                           <li class="footer_nav_item"><a href="logout" style="color:white;">Logout</a></li>
+
+							<!--
+                                             		  <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+								-->
+
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<script src="../static/js/jquery-3.2.1.min.js"></script>
+<script src="../static/styles/bootstrap4/popper.js"></script>
+<script src="../static/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="../static/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="../static/https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="../static/js/contact_custom.js"></script>
+</body>
+</html>

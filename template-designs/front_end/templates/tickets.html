@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>all comments</title>
+<title>your ticke</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -49,10 +49,11 @@
                                                 </div>
                                                 <div class="main_nav_container ml-auto">
                                                         <ul class="main_nav_list">
-                                                                <li class="main_nav_item"><a href="home">home</a></li>
-                                                                <li class="main_nav_item"><a href="users">user</a></li>
-                                                                <li class="main_nav_item"><a href="comments">comments</a></li>
+                                                                 <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                                <li class="main_nav_item"><a href="book">book</a></li>
                                                                 <li class="main_nav_item"><a href="logout">logout</a></li>
+
                                                         </ul>
                                                 </div>
 
@@ -99,39 +100,35 @@
                         <div class="menu_close_container"><div class="menu_close"></div></div>
                         <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
                         <ul>
-                                <li class="menu_item"><a href="home">home</a></li>
-                                <li class="menu_item"><a href="routes">route</a></li>
-                                <li class="menu_item"><a href="users">show users</a></li>
-                                <li class="menu_item"><a href="comments">show comments</a></li>
-                                <li class="menu_item"><a href="logout">logout</a></li>
+                              <li class="main_nav_item"><a href="home">home</a></li>
+                              <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                              <li class="main_nav_item"><a href="book">book</a></li>
+                              <li class="main_nav_item"><a href="logout">logout</a></li>
                         </ul>
                 </div>
         </div>
         </br></br></br></br></br></br></br></br></br></br></br></br>
  
-
+<div style="background-color: #f1f1f1; padding: 10px;">
+  <button onclick="downloadTicket()" style="background-color: #4CAF50;margin-left:1050px; padding: 10px 20px; border: none; cursor: pointer;">Download Ticket</button>
+</div>
 <div class="center">
   <h1 style="color: purple; margin-left: 250px; height: 50px;"><b>Thanks for Traveling with us!!</b></h1>
   {% for tick in ticket %}
-    <h3 style="color: green; margin-left: 300px;"><b>Booked Time:</b> <b style="margin-left: 10px; color: blue;">{{ tick[1] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>First Name:</b><b style="margin-left: 15px; color: blue;">{{ tick[3] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Last Name:</b><b style="margin-left: 40px; color: blue;">{{ tick[4] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Ticket ID:</b> <b style="margin-left: 60px; color: blue;">{{ tick[0] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Phone NO:</b><b style="margin-left: 50px; color: blue;">{{ tick[5] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>From:</b> <b style="margin-left: 110px; color: blue;">{{ tick[6] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>To:</b> <b style="margin-left: 155px; color: blue;">{{ tick[7] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px;"><b>Side NO:</b> <b style="margin-left: 80px; color: blue;">{{ tick[11] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px;"><b>Travel Date:</b> <b style="margin-left: 40px; color: blue;">{{ tick[8] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px;"><b>Seat No:</b> <b style="margin-left: 85px; color: blue;">{{ tick[9] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px;"><b>Price:</b> <b style="margin-left: 120px; color: blue;">{{ tick[10] }}</b></h3>
-    <h3 style="color: green; margin-left: 300px;"><b>Plate NO:</b><b style="margin-left: 85px; color: blue;">{{ tick[12] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Booked Time:</b> <b style="margin-left: 10px; color: blue;">{{ tick[11] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>First Name:</b><b style="margin-left: 40px; color: blue;">{{ tick[0] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Last Name:</b><b style="margin-left: 40px; color: blue;">{{ tick[1] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Ticket ID:</b> <b style="margin-left: 60px; color: blue;">{{ tick[10] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>Phone NO:</b><b style="margin-left: 50px; color: blue;">{{ tick[2] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>From:</b> <b style="margin-left: 100px; color: blue;">{{ tick[3] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px; margin-bottom: 5;"><b>To:</b> <b style="margin-left: 135px; color: blue;">{{ tick[4] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Side NO:</b> <b style="margin-left: 70px; color: blue;">{{ tick[8] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Travel Date:</b> <b style="margin-left: 27px; color: blue;">{{ tick[5] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Seat No:</b> <b style="margin-left: 70px; color: blue;">{{ tick[6] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Price:</b> <b style="margin-left: 105px; color: blue;">{{ tick[7] }}</b></h3>
+    <h3 style="color: green; margin-left: 300px;"><b>Plate NO:</b><b style="margin-left: 65px; color: blue;">{{ tick[9] }}</b></h3>
   {% endfor %}
 </div>
-
-<!-- Print Button -->
-<button onclick="openPrintWindow()">Print Ticket</button>
-
-<!-- JavaScript -->
 <script>
 function openPrintWindow() {
   var printWindow = window.open("", "_blank");
@@ -214,7 +211,7 @@ function openPrintWindow() {
 </div>
 
 <!-- Download Button -->
-<button onclick="downloadTicket()">Download Ticket</button>
+<!--<button onclick="downloadTicket()">Download Ticket</button> -->
 
 <!-- JavaScript -->
 <script>
@@ -258,7 +255,7 @@ function downloadTicket() {
                                 <div class="col-lg-3 order-lg-1 order-2  ">
                                         <div class="copyright_content d-flex flex-row align-items-center">
                                                 <div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#">Guzo Team</a>
+&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#">Ticket Team</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                                         </div>
                                 </div>
@@ -267,12 +264,11 @@ function downloadTicket() {
                                         <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
                                                 <div class="footer_nav">
                                                         <ul class="footer_nav_list">
-                                                                <li class="footer_nav_item"><a href="home">home</a></li>
-                                                                <li class="footer_nav_item"><a href="#">show tickets</a></li>
-                                                                <li class="footer_nav_item"><a href="comments">comments</a></li>
-                                                                <li class="footer_nav_item"><a href="users">users</a></li>
-                                                                <li class="footer_nav_item"><a href="routes">routes</a></li>
-                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+                                                         <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                                <li class="main_nav_item"><a href="book">book</a></li>
+                                                                <li class="main_nav_item"><a href="logout">logout</a></li>
+
 
                                                         </ul>
                                                 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Show Route</title>
+<title>delete admin</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -20,8 +20,9 @@
 <body style="background-color: lightblue;">
 
 <div class="super_container">
-               
+                <!-- Header -->
 <header class="header">
+                <!-- Top Bar -->
                 <div class="top_bar">
                         <div class="container">
                                 <div class="row">
@@ -37,11 +38,6 @@
                                                                 <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                                         </ul>
                                                 </div>
-						<div class="user_box ml-auto">
-                                                        <div class="user_box_login user_box_link"><a href="login">login</a></div>
-                                                        <div class="user_box_register user_box_link"><a href="registor">register</a></div>
-                                                </div>
-
                                         </div>
                                 </div>
                         </div>
@@ -56,10 +52,17 @@
                                                 </div>
                                                 <div class="main_nav_container ml-auto">
                                                         <ul class="main_nav_list">
-                                                                <li class="main_nav_item"><a href="home">home</a></li>
-                                                                <li class="main_nav_item"><a href="about">About us</a></li>
-                                                                <li class="main_nav_item"><a href="offers">cheeck route</a></li>
-                                                                <li class="main_nav_item"><a href="comment">comment</a></li>
+                                                         <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+
                                                         </ul>
                                                 </div>
                                                 <div class="content_search ml-lg-0 ml-auto">
@@ -101,50 +104,101 @@
                         <div class="menu_close_container"><div class="menu_close"></div></div>
                         <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
                         <ul>
-                                <li class="menu_item"><a href="home">home</a></li>
-                                <li class="menu_item"><a href="about">about us</a></li>
-                                <li class="menu_item"><a href="offers">cheeck route</a></li>
-                                <li class="menu_item"><a href="comment">comment</a></li>
+                              <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
                         </ul>
                 </div>
         </div>
-	</br></br></br></br></br></br></br></br></br></br></br></br>
-	<h1 style="margin-left:300px;color:brown;"><b>Show Route Info</b> </h1></br>
+	</br></br></br>
+	</br></br></br>
+	</br></br></br>
+</br></br></br>
+</br></br></br>
 
-	<table border="2">
+ {% if success %}
+    <div class="success">
+    <h3 style="color: yellow; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+    {% endif %}
+
+
+         {% if success %}
+    <div class="success">
+    <h3 style="color: yellow; margin-left: 150px;"><b>{{ success }}</b><span style="margin-left:30px;" class="symbol">✔</span></h3>
+    </div>
+    {% endif %}
+      {% if error %}
+    <div class="success">
+    <h3 style="color: red; margin-left: 150px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol">X</span></h3>
+    </div>
+    {% endif %}
+
+
+	 <h1 style="margin-left:350px;color:blue;"><b>City Delete</b> </h1></br>
+	 <table style="margin-left: 300px; width: 400px; background-color: lightgray;">
     <thead>
-    <tr style="background-color: white;">
-    <th><h3><b style="color: blue;">No.</b></h3></th>
-    <th><h3><b style="color: blue;">reg date</b></h3></th>
-    <th><h3><b style="color: blue;">Id</b></h3></th>
-    <th><h3><b style="color: blue;">Travel Date</b></h3></th>
-    <th><h3><b style="color: blue;">Departure</b></h3></th>
-    <th><h3><b style="color: blue;">Destination</b></h3></th>
-    <th><h3><b style="color: blue;">Price</b></h3></th>
-    <th><h3><b style="color: blue;">Kilometer</b></h3></th>
-    <th><h3><b style="color: blue;">side no</b></h3></th>
-    <th><h3><b style="color: blue;">plate_no</b></h3></th>
+  <tr style="background-color: lightgray; width: 400px;">
+    <th style="padding-top: 10px;">
+    </th>
 </tr>
-    </thead>
-    
+<tr>
+    <th><h3><b style="color: red; background-color: green;">No</b></h3></th>
+    <th><h3><b style="color: white; background-color: green; margin-left: 40px;">Cities</b></h3></th>
+</tr>
+</thead>
+<tbody style="background-color: lightgray; margin-left: 300px;">
+        {% for city in cities %}
+        <tr>
+            <td><h3><b style="color: brown;">{{ loop.index }}</b></h3></td>
+            <td>
+                <form action="/citydelete" method="POST">
+                    <input type="text" name="depcity" value="{{ city[3] }}" readonly style="height: 50px; margin-left: 20px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+            </td>
+            <td>
+                <button type="submit" style="height: 40px; width: 100px; background-color: blue; margin-left: 40px; margin-right:20px; text-align: center; color: brown; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button>
+                </form>
+            </td>
 
-    <tbody style="background-color: magenta;">
-    {% for route in routes %}
-    <tr>
-        <td style="background-color: green;"><h3><b style="color: yellow;">{{ loop.index }}</b></h3></td>
-	<td><h4> <b style="color: green;">{{ route.created_at }}</b></h4></td>
-        <td><h4><b style="color: green;">{{ route.id}}</b></h4></td>
-        <td><h4> <b style="color: green;">{{ route.date }} </b></h4></td>
-        <td> <h4> <b style="color: green;"> {{ route.depcity }} </b></h4></td>
-        <td> <h4> <b style="color: green;"> {{ route.descity }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.price }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.kilometer }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.side_no }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.plate_no }} </b></h4></td>
-    </tr>
-    {% endfor %}
-</tbody>
+</tr>
+        {% endfor %}
+    </tbody>
 </table>
+
+
+<!--
+	<h1 style="margin-left:500px;color:blue;"><b>city Delete</b> </h1></br>
+	<form action="/citydelete" method="POST" style="margin-left: 300px; background-color: lightgray; padding: 20px; margin-right: 300px;">
+    <table>
+        <thead>
+            <tr style="background-color: lightgray;margin-left:200px;">
+                <th><h3><b style="color: red; margin-left:50px; background-color: green;">No</b></h3></th>
+                <th><h3><b style="color: white; background-color: green;margin-left:150px;">city</b></h3></th>
+            </tr>
+        </thead>
+        <tbody style="background-color: lightgray;">
+            {% for city in cities %}
+            <tr>
+                <td><h3><b style="color: brown;margin-left:50px;">{{ loop.index }}</b></h3></td>
+                <td>
+                    <input type="text" name="depcity" value="{{ city[3] }}" readonly style="height: 50px;margin-left:100px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;">
+                </td>
+                <td>
+                    <button type="submit" style="height: 40px; margin-left: 50px; text-align: center; color: blue; border-radius: 10px; border: 1px solid #ccc; font-weight: bold;"><b style="color: red;">Delete</b></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+-->
 </br></br></br</br></br>
   </br></br></br>
   <div class="copyright">
@@ -161,10 +215,17 @@
                                         <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
                                                 <div class="footer_nav">
                                                         <ul class="footer_nav_list">
-                                                                <li class="footer_nav_item"><a href="home">home</a></li>
-                                                                <li class="footer_nav_item"><a href="about">about us</a></li>
-                                                                <li class="footer_nav_item"><a href="comment">comment</a></li>
-                                                                <li class="footer_nav_item"><a href="offers">cheeck route</a></li>
+                                             		  <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="businsert">insert bus</a></li>
+                                                                <li class="main_nav_item"><a href="route">route insert</a></li>
+                                                                <li class="main_nav_item"><a href="routes">routes</a></li>
+                                                                <li class="footer_nav_item"><a href="users">users</a></li>
+                                                                <li class="footer_nav_item"><a href="buses">buses</a></li>
+                                                                <li class="footer_nav_item"><a href="admin">admin acount</a></li>
+                                                                <li class="footer_nav_item"><a href="admindelete">delete account</a></li>
+                                                                 <li class="footer_nav_item"><a href="city">insert city</a></li>
+                                                                <li class="footer_nav_item"><a href="logout">logout</a></li>
+
 
                                                         </ul>
                                                 </div>

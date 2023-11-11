@@ -63,7 +63,6 @@
 								<li class="main_nav_item"><a href="home">home</a></li>
 								<li class="main_nav_item"><a href="about">about us</a></li>
 								<li class="main_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="main_nav_item"><a href="blog.html">news</a></li>
 								<li class="main_nav_item"><a href="comment">comment</a></li>
 							</ul>
 						</div>
@@ -113,7 +112,6 @@
 				<li class="menu_item"><a href="home">home</a></li>
 				<li class="menu_item"><a href="about">about us</a></li>
 				<li class="menu_item"><a href="offers">cheeck rout</a></li>
-				<li class="menu_item"><a href="blog.html">news</a></li>
 				<li class="menu_item"><a href="comment">comment</a></li>
 			</ul>
 		</div>
@@ -158,7 +156,7 @@
 </br></br></br>
 										<div class="search_panel active">
 											<form action="get_route" method="post" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">												  <div class="search_item">
-												      <div>Departure City</div>												<!--	<input type="text" name = "depcity" class="check_in search_input" placeholder="AddisAbeba">-->
+												      <div style="margin-left:30px;">Departure City</div>												<!--	<input type="text" name = "depcity" class="check_in search_input" placeholder="AddisAbeba">-->
 										  <select style="width: 200px;" name = "depcity" id="gender-input" class="check_in search_input" style="text-align: center;" required="Select Destination city." class="check_in search_input">    <option value="" style="color: green; font-weight: bold;">Select Desparture</option>
     {% if des %}
         {% for depcity in des %}
@@ -167,9 +165,8 @@
     {% endif %}
 </select>
 												</div>
-												<div class="search_item">													<div style="margin: 0 100px 0 auto; text-align: right;">Destination City</div>
-											<!--		<input type="text" name = "descity"class="check_out search_input" placeholder="Dredawa">  -->
-
+												<div class="search_item">													<!--<div style="margin: 0 100px 0 auto; text-align: right;">Destination City</div>-->					<!--		<input type="text" name = "descity"class="check_out search_input" placeholder="Dredawa">  -->
+<div style="display: inline-block; text-align: right; margin-left: 30px; white-space: nowrap;">Destination City</div>
                                                                                   <select style="width: 200px;" name = "descity" id="gender-input" class="check_in search_input" style="text-align: center;" required="Select Destination city." class="check_in search_input">    <option value="" style="color: green; font-weight: bold;">Select Desparture</option>
     {% if des %}
         {% for depcity in des %}
@@ -179,7 +176,7 @@
 </select>
 
 												</div>							<div class="search_item">			
-							<div>Travel Date</div>													<input type="date" class="check_out search_input" name="date" placeholder="10/12/2023" required>												</div>
+							<div style="margin-left:30px;">Travel Date</div>													<input type="date" class="check_out search_input" name="date" placeholder="10/12/2023" required>												</div>
 			<button class="button search_button">cheeck</button>											</form>										</div>					
 										<!-- Search Panel -->
 									</div>
@@ -308,8 +305,6 @@
 		<div class="container">
 			<div class="row intro_items">
 
-				<!-- Intro Item -->
-
 				<div class="col-lg-4 intro_col">
 					<div class="intro_item">
 						<div class="intro_item_overlay"></div>
@@ -360,14 +355,16 @@
 	</br>
 	</br>
 	</br>
-<!-- Copyright -->
+
+
+
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 order-lg-1 order-2  ">
 					<div class="copyright_content d-flex flex-row align-items-center">
 						<div>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved designed by guzo team <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">guzo team</a></div>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved designed by guzo team <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Ticket Team</a></div>
 					</div>
 				</div>
 				<div class="col-lg-9 order-lg-2 order-1">
@@ -377,9 +374,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<li class="footer_nav_item"><a href="home">home</a></li>
 								<li class="footer_nav_item"><a href="about">about us</a></li>
 								<li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-								<li class="footer_nav_item"><a href="blog.html">news</a></li>
 								<li class="footer_nav_item"><a href="comment">Comment</a></li>
-								<li class="footer_nav_item"><a href="contact.html">contact</a></li>
 							</ul>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Show Route</title>
+<title>error tickets</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -20,7 +20,6 @@
 <body style="background-color: lightblue;">
 
 <div class="super_container">
-               
 <header class="header">
                 <div class="top_bar">
                         <div class="container">
@@ -37,11 +36,6 @@
                                                                 <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                                         </ul>
                                                 </div>
-						<div class="user_box ml-auto">
-                                                        <div class="user_box_login user_box_link"><a href="login">login</a></div>
-                                                        <div class="user_box_register user_box_link"><a href="registor">register</a></div>
-                                                </div>
-
                                         </div>
                                 </div>
                         </div>
@@ -56,10 +50,12 @@
                                                 </div>
                                                 <div class="main_nav_container ml-auto">
                                                         <ul class="main_nav_list">
-                                                                <li class="main_nav_item"><a href="home">home</a></li>
-                                                                <li class="main_nav_item"><a href="about">About us</a></li>
-                                                                <li class="main_nav_item"><a href="offers">cheeck route</a></li>
-                                                                <li class="main_nav_item"><a href="comment">comment</a></li>
+                                                        <li class="main_nav_item"><a href="home">home</a></li>
+                                                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                                <li class="main_nav_item"><a href="book">book</a></li>
+                                                                <li class="main_nav_item"><a href="logout">logout</a></li>
+
+
                                                         </ul>
                                                 </div>
                                                 <div class="content_search ml-lg-0 ml-auto">
@@ -101,50 +97,26 @@
                         <div class="menu_close_container"><div class="menu_close"></div></div>
                         <div class="logo menu_logo"><a href="#"><img src="../static/images/logo.png" alt=""></a></div>
                         <ul>
-                                <li class="menu_item"><a href="home">home</a></li>
-                                <li class="menu_item"><a href="about">about us</a></li>
-                                <li class="menu_item"><a href="offers">cheeck route</a></li>
-                                <li class="menu_item"><a href="comment">comment</a></li>
+				<li class="main_nav_item"><a href="home">home</a></li>
+                                <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                <li class="main_nav_item"><a href="book">book</a></li>
+                                <li class="main_nav_item"><a href="logout">logout</a></li>
+
                         </ul>
                 </div>
         </div>
-	</br></br></br></br></br></br></br></br></br></br></br></br>
-	<h1 style="margin-left:300px;color:brown;"><b>Show Route Info</b> </h1></br>
+	</br></br></br>
+	</br></br></br>
+	</br></br></br>
+</br></br></br>
+</br></br></br>
 
-	<table border="2">
-    <thead>
-    <tr style="background-color: white;">
-    <th><h3><b style="color: blue;">No.</b></h3></th>
-    <th><h3><b style="color: blue;">reg date</b></h3></th>
-    <th><h3><b style="color: blue;">Id</b></h3></th>
-    <th><h3><b style="color: blue;">Travel Date</b></h3></th>
-    <th><h3><b style="color: blue;">Departure</b></h3></th>
-    <th><h3><b style="color: blue;">Destination</b></h3></th>
-    <th><h3><b style="color: blue;">Price</b></h3></th>
-    <th><h3><b style="color: blue;">Kilometer</b></h3></th>
-    <th><h3><b style="color: blue;">side no</b></h3></th>
-    <th><h3><b style="color: blue;">plate_no</b></h3></th>
-</tr>
-    </thead>
-    
+      {% if error %}
+    <div class="success">
+	    <h3 style="color: red; margin-left: 150px;"><b>{{ error }}</b><span style="margin-left:30px;" class="symbol"><b>X</b></span></h3>
+    </div>
+    {% endif %}
 
-    <tbody style="background-color: magenta;">
-    {% for route in routes %}
-    <tr>
-        <td style="background-color: green;"><h3><b style="color: yellow;">{{ loop.index }}</b></h3></td>
-	<td><h4> <b style="color: green;">{{ route.created_at }}</b></h4></td>
-        <td><h4><b style="color: green;">{{ route.id}}</b></h4></td>
-        <td><h4> <b style="color: green;">{{ route.date }} </b></h4></td>
-        <td> <h4> <b style="color: green;"> {{ route.depcity }} </b></h4></td>
-        <td> <h4> <b style="color: green;"> {{ route.descity }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.price }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.kilometer }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.side_no }} </b></h4></td>
-        <td> <h4> <b style="color: green;">{{ route.plate_no }} </b></h4></td>
-    </tr>
-    {% endfor %}
-</tbody>
-</table>
 </br></br></br</br></br>
   </br></br></br>
   <div class="copyright">
@@ -152,20 +124,19 @@
                         <div class="row">
                                 <div class="col-lg-3 order-lg-1 order-2  ">
                                         <div class="copyright_content d-flex flex-row align-items-center">
-                                                <div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                <div>
 &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="#">Ticket Team</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+</div>
                                         </div>
                                 </div>
                                 <div class="col-lg-9 order-lg-2 order-1">
                                         <div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
                                                 <div class="footer_nav">
                                                         <ul class="footer_nav_list">
-                                                                <li class="footer_nav_item"><a href="home">home</a></li>
-                                                                <li class="footer_nav_item"><a href="about">about us</a></li>
-                                                                <li class="footer_nav_item"><a href="comment">comment</a></li>
-                                                                <li class="footer_nav_item"><a href="offers">cheeck route</a></li>
-
+                                             		<li class="main_nav_item"><a href="home">home</a></li>
+                                                        <li class="main_nav_item"><a href="get_ticket">show ticket</a></li>
+                                                        <li class="main_nav_item"><a href="book">book</a></li>
+                                                        <li class="main_nav_item"><a href="logout">logout</a></li>
                                                         </ul>
                                                 </div>
                                         </div>
